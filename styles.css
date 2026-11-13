@@ -6545,3 +6545,85 @@ button.review-more {
     padding-top: 80px;
   }
 }
+
+/* Адаптив главной: согласованные фоны секций и геометрия перекрытий. */
+@media (max-width: 1160px) {
+  .services-section,
+  .reviews-section,
+  .articles-section,
+  .process-section {
+    background-color: var(--white);
+  }
+
+  .industries-section,
+  .experts-section,
+  .faq-section {
+    background-color: var(--background);
+  }
+
+  .consultation-band,
+  .bottom-cta {
+    background-color: var(--blue);
+  }
+
+  .about-section,
+  .site-footer {
+    background-color: #082b4d;
+  }
+}
+
+/* Планшет: перекрытие 64px вместо десктопных 80px.
+   Компенсация сохраняет исходные расстояния до контента соседних секций. */
+@media (max-width: 1160px) and (min-width: 821px) {
+  .consultation-band {
+    padding-bottom: 132px;
+  }
+
+  .about-section {
+    margin-top: -64px;
+    margin-bottom: -64px;
+  }
+
+  .process-section {
+    padding-top: 148px;
+  }
+
+  .articles-section {
+    padding-bottom: 144px;
+  }
+
+  .bottom-cta {
+    margin-top: -64px;
+    margin-bottom: -64px;
+  }
+
+  .site-footer {
+    padding-top: 136px;
+  }
+}
+
+/* На узких экранах закрепляем фоны независимо от старых локальных правил. */
+@media (max-width: 820px) {
+  .services-section,
+  .reviews-section,
+  .articles-section,
+  .process-section {
+    background-color: var(--white);
+  }
+
+  .industries-section,
+  .experts-section,
+  .faq-section {
+    background-color: var(--background);
+  }
+
+  .consultation-band,
+  .bottom-cta {
+    background-color: var(--blue);
+  }
+
+  .about-section,
+  .site-footer {
+    background-color: #082b4d;
+  }
+}
