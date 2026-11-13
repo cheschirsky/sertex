@@ -395,6 +395,11 @@ $(function () {
     $button.attr("aria-expanded", String(expanded));
     $button.contents().filter(function () { return this.nodeType === 3; }).first()
       .replaceWith(expanded ? "− скрыть категории " : "+ ещё 3 категории ");
+
+    // Recalculate slide heights so every visible card stretches with the expanded one.
+    if ($.fn.slick && $(".expert-slider").hasClass("slick-initialized")) {
+      $(".expert-slider").slick("setPosition");
+    }
   });
 
   // Slick carousel for five expert cards; cards remain available if the CDN is unavailable.
