@@ -7,29 +7,30 @@
       name="description"
       content="СЕРТЕКС — сертификация и декларирование продукции в России и странах ЕАЭС."
     />
-    <link rel="icon" href="public/favicon.png" />
+    <link rel="icon" href="favicon.png" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <title>СЕРТЕКС — центр по сертификации</title>
   </head>
   <body>
     <header class="site-header">
       <div class="topbar container">
         <a class="logo" href="#top" aria-label="СЕРТЕКС — на главную">
-          <img src="public/assets/5d843.svg" alt="СЕРТЕКС" />
+          <img src="assets/icons/logo.svg" alt="СЕРТЕКС" />
           <span>Центр по сертификации</span>
         </a>
 
         <button class="search-button" type="button" data-open-search>
           <span>Поиск</span>
-          <span aria-hidden="true">⌕</span>
+          <img class="search-icon" src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
         </button>
 
         <div class="header-location">
-          <img src="public/assets/ef0c4.svg" alt="" />
+          <img src="assets/icons/emblem.svg" alt="" />
           <span>Работаем по всей<br />России и ЕАЭС</span>
         </div>
 
-        <a class="header-email" href="mailto:info@sertex.org">info@sertex.org</a>
+        <a class="header-email" href="mailto:info@sertex.org"><img src="assets/icons/envelope-blue.svg" alt="" aria-hidden="true" />info@sertex.org</a>
 
         <div class="header-phones">
           <a href="tel:88007076612">8 (800) 707 66 12</a>
@@ -53,7 +54,7 @@
       <nav class="main-nav" aria-label="Основная навигация">
         <div class="container nav-inner">
           <button class="button services-button" type="button" data-open-services>
-            <span class="menu-lines" aria-hidden="true"></span>
+            <img class="menu-icon" src="assets/icons/menu-blue-small.svg" alt="" aria-hidden="true" />
             Все услуги
           </button>
           <a class="nav-pill" href="#industries">Отрасли</a>
@@ -88,50 +89,33 @@
         </div>
 
         <div class="hero-collage" aria-label="Примеры сертифицируемой продукции">
-          <div class="collage-backdrop"></div>
-          <img
-            class="collage-image image-one"
-            src="public/assets/f4796.png"
-            alt="Косметическая продукция"
-          />
-          <img class="collage-image image-two" src="public/assets/f6470.png" alt="Детские товары" />
-          <img
-            class="collage-image image-three"
-            src="public/assets/1ecd6.png"
-            alt="Промышленное оборудование"
-          />
-          <img class="collage-image image-four" src="public/assets/0a3b2.png" alt="Электроника" />
-          <img
-            class="collage-image image-five"
-            src="public/assets/3f0f6.png"
-            alt="Товары народного потребления"
-          />
+          <img class="hero-image" src="assets/hero.webp" alt="Примеры продукции, для которой оформляются документы" />
         </div>
 
         <div class="benefits">
           <article>
-            <img src="public/assets/ce595.svg" alt="" />
+            <img src="assets/icons/accreditation.svg" alt="" />
             <div>
               <h3>Аккредитация</h3>
               <p>Работаем с аккредитованными органами</p>
             </div>
           </article>
           <article>
-            <img src="public/assets/ce595.svg" alt="" />
+            <img src="assets/icons/laboratory.svg" alt="" />
             <div>
               <h3>Лаборатории</h3>
               <p>Партнёрские испытательные лаборатории</p>
             </div>
           </article>
           <article>
-            <img src="public/assets/f5ec7.svg" alt="" />
+            <img src="assets/icons/document-blue.svg" alt="" />
             <div>
               <h3>Договор</h3>
               <p>Работа по официальному договору</p>
             </div>
           </article>
           <article>
-            <img src="public/assets/ce595.svg" alt="" />
+            <img src="assets/icons/reestr.svg" alt="" />
             <div>
               <h3>Реестр</h3>
               <p>Документы в официальных реестрах</p>
@@ -145,259 +129,265 @@
           <div class="section-heading heading-row">
             <h2><span>Услуги</span> центра</h2>
             <button class="button button-outline" type="button" data-open-services>
-              Все услуги
+              Все услуги <img class="button-icon" src="assets/icons/arrow-up-right-blue.svg" alt="" />
             </button>
           </div>
 
           <div class="services-layout">
             <div class="service-list">
-              <button class="service-item active" type="button" data-service="declaration">
-                <span>Декларации соответствия</span><b>−</b>
-              </button>
-              <button class="service-item" type="button" data-service="certificate">
-                <span>Сертификаты соответствия</span><b>+</b>
-              </button>
-              <button class="service-item" type="button" data-service="registration">
-                <span>Свидетельства государственной регистрации</span><b>+</b>
-              </button>
-              <button class="service-item" type="button" data-service="marketplace">
-                <span>Документы для маркетплейсов</span><b>+</b>
-              </button>
-              <button class="service-item" type="button" data-service="technical">
-                <span>Техническая документация</span><b>+</b>
-              </button>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Свидетельства государственной регистрации (СГР)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Подготовим документы, организуем необходимые исследования и сопроводим получение свидетельства государственной регистрации продукции.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Добровольная сертификация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Поможем подтвердить заявленные свойства продукции и оформить добровольный сертификат для вашей компании.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификаты соответствия</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Определим подходящую схему сертификации, подготовим комплект документов и организуем испытания.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Техническая документация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Разработаем технические условия, паспорта, инструкции и другие документы для выпуска продукции.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Декларации о соответствии</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Проверим требования регламентов, поможем выбрать схему декларирования и зарегистрировать декларацию.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификация ИСО (ISO)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Проконсультируем по стандартам ISO и поможем подготовиться к прохождению сертификации системы менеджмента.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификационные испытания</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Подберём лабораторию и организуем испытания образцов в соответствии с требованиями к вашей продукции.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Документы для маркетплейсов</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Подскажем, какие документы потребуются для размещения и продажи товара на маркетплейсах.</p></div></div>
             </div>
-
-            <article class="service-detail">
-              <div>
-                <p class="eyebrow">Популярная услуга</p>
-                <h3 id="service-title">Декларации соответствия</h3>
-                <p id="service-description">
-                  Подтверждаем соответствие продукции требованиям технических регламентов ЕАЭС.
-                  Помогаем определить схему декларирования, провести испытания и зарегистрировать
-                  документ.
-                </p>
-                <button class="text-link" type="button" data-open-application>
-                  Получить консультацию <span>↗</span>
-                </button>
-              </div>
-              <img id="service-image" src="public/assets/6a87c.png" alt="Документы о соответствии" />
-            </article>
           </div>
-        </div>
-      </section>
+</section>
 
       <section class="section industries-section" id="industries">
         <div class="container">
           <div class="section-heading heading-row">
             <div>
-              <h2><span>Документы</span><br />по отраслям</h2>
+              <h2>Документы и требования<br /><span>по отраслям</span></h2>
               <p>
-                Выберите категорию — на отраслевой странице собраны применимые документы, испытания
-                и требования.
+                Подбираем документы и испытания с учётом особенностей вашей продукции и требований технических регламентов.
               </p>
             </div>
-            <a class="button button-outline" href="#industries">Все отрасли</a>
+            <a class="button button-outline" href="#industries">Все отрасли <img class="button-icon" src="assets/icons/arrow-up-right-blue.svg" alt="" /></a>
           </div>
 
           <div class="industry-grid">
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/ecd27.png" alt="" /><span>Косметика и парфюмерия</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/c494d.png" alt="" /><span>Химическая продукция</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/68670.png" alt="" /><span>Упаковка</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/bc475.png" alt="" /><span>Лёгкая промышленность</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/6eb70.png" alt="" /><span>Электроника</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/4d167.png" alt="" /><span>Игрушки</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/ed011.png" alt="" /><span>Детские товары</span>
-            </a>
-            <a class="industry-card" href="#consultation">
-              <img src="public/assets/8feec.png" alt="" /><span>Машины и оборудование</span>
-            </a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-food.webp" alt="" /><span>Пищевая продукция</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-cosmetics.webp" alt="" /><span>Косметика и парфюмерия</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-chemistry.webp" alt="" /><span>Химическая продукция</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-paper.webp" alt="" /><span>Упаковка</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-textile.webp" alt="" /><span>Лёгкая промышленность</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-electronics.webp" alt="" /><span>Электроника</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-toys.webp" alt="" /><span>Игрушки</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-baby.webp" alt="" /><span>Детские товары</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-machines.webp" alt="" /><span>Машины и оборудование</span></a>
+            <a class="industry-card" href="#consultation"><img src="assets/industry/industry-oil.webp" alt="" /><span>Сварочные материалы</span></a>
           </div>
         </div>
       </section>
 
       <section class="consultation-band" id="consultation">
         <div class="container consultation-grid">
-          <div>
-            <h2>Получите консультацию<br />по вашей продукции</h2>
-            <p>
-              Оставьте заявку — эксперт позвонит, уточнит задачу и объяснит, что потребуется для
-              оформления. Начать можно с простого описания товара.
-            </p>
+          <div class="consultation-copy">
+            <h2>Определим, какие документы нужны<br />для вашей продукции</h2>
+            <p>Оставьте заявку — эксперт изучит информацию о товаре и подскажет, какие документы и испытания потребуются.</p>
           </div>
           <form class="inline-form" data-contact-form>
-            <label>
-              <span>Телефон</span>
-              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
-            </label>
-            <label>
-              <span>Какая у вас продукция?</span>
-              <input type="text" name="product" placeholder="Краткое описание" required />
-            </label>
-            <button class="button button-dark" type="submit">Получить консультацию</button>
-            <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+            <label><span>Ваше имя</span><input type="text" name="name" placeholder="Имя" required /></label>
+            <label><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required /></label>
+            <label class="product-field"><span>Ваша продукция</span><input type="text" name="product" placeholder="Краткое описание" required /></label>
+            <button class="button button-dark" type="submit">Отправить заявку</button>
+            <label class="consent"><input type="checkbox" name="consent" required /><span>Я согласен(на) с <a href="#">политикой конфиденциальности</a> и <a href="#">обработкой персональных данных</a></span></label>
           </form>
         </div>
       </section>
 
       <section class="section about-section" id="about">
         <div class="container about-grid">
-          <div class="about-copy">
-            <p class="eyebrow light">СЕРТЕКС — экспертное сопровождение</p>
-            <h2>Сопровождаем<br />в сертификации</h2>
+          <div class="about-intro">
+            <h2><span>СЕРТЕКС</span> — экспертное<br />сопровождение<br />в сертификации</h2>
             <p>
               Помогаем производителям, импортёрам и продавцам оформлять документы для законного
               обращения продукции в России и странах ЕАЭС. Сопровождаем весь процесс — от
               определения требований и организации испытаний до получения готовых документов.
             </p>
-            <button class="button button-light" type="button" data-open-application>
-              Получить консультацию
-            </button>
+            <a class="button button-primary" href="#about-details">Подробнее о компании <span aria-hidden="true">↗</span></a>
           </div>
-
-          <div class="about-media">
-            <img src="public/assets/6a87c.png" alt="Эксперт центра по сертификации" />
-            <span class="play-button" aria-hidden="true">▶</span>
+          <div class="about-map" aria-label="География работы СЕРТЕКС">
+            <img src="assets/map.webp" alt="Карта России и стран ЕАЭС" />
           </div>
-
+          <div class="about-media" id="about-details">
+            <img src="assets/video.webp" alt="Специалисты СЕРТЕКС консультируют по сертификации" />
+            <span class="about-play" aria-hidden="true">▶</span>
+          </div>
           <div class="stats">
-            <div><strong>2007</strong><span>год основания компании</span></div>
-            <div><strong>4000+</strong><span>клиентов доверили нам документы</span></div>
-            <div><strong>18+</strong><span>лет практического опыта</span></div>
+            <div><strong>2007</strong><span>год основания СЕРТЕКС</span></div>
+            <div><strong>6000+</strong><span>клиентов доверили нам оформление документов</span></div>
+            <div><strong>40</strong><span>человек в компании</span></div>
+          </div>
+          <div class="partner-labs-inner">
+            <h3>Партнёрские лаборатории</h3>
+            <div class="partner-logos">
+              <div class="partner-lab-card"><img src="assets/il-mskts.webp" alt="МСК ТС" /><span>Испытательная лаборатория «МСК ТС»</span><a href="#" aria-label="Сайт лаборатории МСК ТС">msk-ts.ru <span aria-hidden="true">↗</span></a></div>
+              <div class="partner-lab-card"><img src="assets/il-biim-2.webp" alt="ИЛ БИИМ" /><span>Испытательная лаборатория «ИЛ БИИМ»</span><a href="#" aria-label="Сайт лаборатории ИЛ БИИМ">biim.ru <span aria-hidden="true">↗</span></a></div>
+            </div>
           </div>
         </div>
       </section>
 
+
       <section class="section process-section" id="process">
         <div class="container">
-          <div class="section-heading">
+          <div class="process-intro">
             <h2><span>От вашей заявки</span><br />до готовых документов</h2>
-            <p>
-              Отлаженный процесс и сопровождение профильного эксперта помогают пройти оформление без
-              лишних задержек.
-            </p>
+            <p>Отлаженный процесс и сопровождение профессиональных экспертов помогают пройти оформление без лишних затрат и задержек.</p>
+            <div class="process-contact">
+              <h3>Есть задача по сертификации?</h3>
+              <button class="button button-primary" type="button" data-open-application>Оставить заявку</button>
+              <a href="tel:88007076612"><img src="assets/icons/phone-black.svg" alt="" aria-hidden="true" />8 (800) 707-66-12</a>
+              <a href="mailto:info@sertex.org"><img src="assets/icons/envelope-blue.svg" alt="" aria-hidden="true" />info@sertex.org</a>
+            </div>
           </div>
 
           <ol class="process-steps">
             <li>
-              <span>01</span>
-              <div>
-                <h3>Разбираемся в задаче</h3>
-                <p>Уточняем продукцию, код ТН ВЭД и область применения.</p>
+              <span class="process-number">01</span>
+              <div class="process-step-card">
+                <div>
+                  <h3>Анализируем вашу продукцию</h3>
+                  <p>Изучаем описание товаров и исходные документы, уточняем задачу.</p>
+                </div>
+                <img class="process-icon" src="assets/icons/analyze.svg" alt="" aria-hidden="true" />
               </div>
             </li>
             <li>
-              <span>02</span>
-              <div>
-                <h3>Определяем требования</h3>
-                <p>Выбираем документ, схему оформления и перечень испытаний.</p>
+              <span class="process-number">02</span>
+              <div class="process-step-card">
+                <div>
+                  <h3>Определяем схему и условия</h3>
+                  <p>Выясняем, какой документ необходим, рассчитываем стоимость и сроки, заключаем договор.</p>
+                </div>
+                <img class="process-icon" src="assets/icons/scheme.svg" alt="" aria-hidden="true" />
               </div>
             </li>
             <li>
-              <span>03</span>
-              <div>
-                <h3>Проводим испытания</h3>
-                <p>Организуем передачу образцов и работу с лабораторией.</p>
+              <span class="process-number">03</span>
+              <div class="process-step-card">
+                <div>
+                  <h3>Проводим испытания и оформление</h3>
+                  <p>При необходимости организуем отбор образцов и испытания, готовим и регистрируем документы.</p>
+                </div>
+                <img class="process-icon" src="assets/icons/testing.svg" alt="" aria-hidden="true" />
               </div>
             </li>
             <li>
-              <span>04</span>
-              <div>
-                <h3>Выдаём документы</h3>
-                <p>Вы получаете документы, пояснения и данные для проверки.</p>
+              <span class="process-number">04</span>
+              <div class="process-step-card">
+                <div>
+                  <h3>Бесплатно доставляем документы</h3>
+                  <p>Вы получаете документы, пояснения и данные для проверки в официальном реестре.</p>
+                </div>
+                <img class="process-icon" src="assets/icons/documents.svg" alt="" aria-hidden="true" />
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="section section-white experts-section">
+      <section class="section section-white experts-section" id="experts">
         <div class="container">
           <div class="section-heading heading-row">
-            <h2>Вашу задачу ведёт<br /><span>профильный эксперт</span></h2>
-            <div class="slider-buttons" aria-hidden="true">
-              <button>←</button><button>→</button>
+            <div>
+              <h2>Вашу задачу ведёт<br /><span>профильный эксперт</span></h2>
+              <p class="experts-subtitle">За каждым проектом стоит специалист, который знает требования вашей отрасли и сопровождает оформление документов до результата.</p>
+            </div>
+            <div class="slider-buttons">
+              <button class="expert-prev" type="button" aria-label="Предыдущие эксперты"><img src="assets/icons/arrow-right-blue.svg" alt="" /></button>
+              <button class="expert-next" type="button" aria-label="Следующие эксперты"><img src="assets/icons/arrow-right-blue.svg" alt="" /></button>
             </div>
           </div>
-
-          <div class="expert-grid">
-            <article class="expert-card">
-              <img src="public/assets/f206c.png" alt="Иван Алексеевич" />
+          <div class="expert-grid expert-slider">
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-iulia.png" alt="Юлия Михайловна" /></div>
+              <span class="expert-experience">Опыт 9 лет</span>
+              <h3>Юлия Михайловна</h3>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Мебельная продукция и интерьерные товары</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Мебельная продукция</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Материалы для интерьера</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Мебель для дома и офиса</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
+            </article>
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-ivan.png" alt="Иван Алексеевич" /></div>
+              <span class="expert-experience">Опыт 12 лет</span>
               <h3>Иван Алексеевич</h3>
-              <p>Медицинское оборудование и инструменты</p>
-              <a href="mailto:info@sertex.org">Написать эксперту ↗</a>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Медицинское оборудование и инструменты</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Медицинские изделия</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Регистрационные удостоверения</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Испытания и техническая документация</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
             </article>
-            <article class="expert-card">
-              <img src="public/assets/14fe9.png" alt="Илья Анатольевич" />
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-ilia.png" alt="Илья Анатольевич" /></div>
+              <span class="expert-experience">Опыт 10 лет</span>
               <h3>Илья Анатольевич</h3>
-              <p>Парфюмерно-косметическая продукция</p>
-              <a href="mailto:info@sertex.org">Написать эксперту ↗</a>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Парфюмерно-косметическая продукция</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Косметика и средства гигиены</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Бытовая химия</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Свидетельства государственной регистрации</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
             </article>
-            <article class="expert-card">
-              <img src="public/assets/06bf8.png" alt="Елена Игоревна" />
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-elena.png" alt="Елена Игоревна" /></div>
+              <span class="expert-experience">Опыт 9 лет</span>
               <h3>Елена Игоревна</h3>
-              <p>Игрушки и детская продукция</p>
-              <a href="mailto:info@sertex.org">Написать эксперту ↗</a>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Игрушки и детская продукция</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Детская мебель</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Одежда и обувь для детей</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Товары для новорождённых</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
             </article>
-            <article class="expert-card">
-              <img src="public/assets/0e35a.png" alt="Эксперт по мебельной продукции" />
-              <h3>Анна Сергеевна</h3>
-              <p>Мебельная и текстильная продукция</p>
-              <a href="mailto:info@sertex.org">Написать эксперту ↗</a>
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-andrei.png" alt="Андрей — эксперт по сертификации" /></div>
+              <span class="expert-experience">Опыт 11 лет</span>
+              <h3>Андрей</h3>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Сопровождение сертификации продукции</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Импортная продукция</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Техническая документация</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Сертификация по требованиям ЕАЭС</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
+            </article>
+<article class="expert-card">
+              <div class="expert-photo"><img src="assets/experts/expert-ivan.png" alt="Иван Алексеевич" /></div>
+              <span class="expert-experience">Опыт 12 лет</span>
+              <h3>Иван Алексеевич</h3>
+              <ul class="expert-categories"><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Медицинское оборудование и инструменты</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Медицинские изделия</li></ul>
+              <ul class="expert-extra" hidden><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Регистрационные удостоверения</li><li><img src="assets/icons/arrow-double-down-right.svg" alt="" aria-hidden="true" />Испытания и техническая документация</li></ul>
+              <button class="expert-more" type="button" aria-expanded="false">+ Ещё 3 категории</button>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section reviews-section">
+      <section class="section reviews-section" id="reviews">
         <div class="container">
           <div class="section-heading heading-row">
             <h2><span>Отзывы и рекомендации</span><br />клиентов</h2>
-            <a class="button button-outline" href="#reviews">Все отзывы</a>
+            <a class="button button-outline" href="#reviews">Все отзывы <img class="button-icon" src="assets/icons/arrow-right-blue.svg" alt="" /></a>
           </div>
-
-          <div class="review-grid" id="reviews">
+          <div class="review-grid">
             <article class="review-card">
-              <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
-              <blockquote>
-                «СЕРТЕКС» помог получить все необходимые сертификаты для нашего бизнеса. Благодарны
-                за оперативность, профессионализм и внимательное отношение.
-              </blockquote>
-              <footer><strong>Татьяна Алаева</strong><span>Генеральный директор</span></footer>
+              <div class="review-meta"><div class="stars" aria-label="Оценка 5 из 5">★★★★★</div><time datetime="2021-09-30">30.09.2021</time></div>
+              <strong class="review-company">ООО «Старт-Строй»</strong>
+              <span class="review-position">Генеральный директор А. В. Поваляев</span>
+              <blockquote>«СЕРТЕКС» помог получить все необходимые сертификаты для нашего бизнеса. На каждом этапе специалисты подробно объясняли требования, помогали подготовить документы и оперативно отвечали на вопросы. Благодарны за профессионализм, внимательное отношение и чёткую организацию работы.</blockquote>
+              <a class="review-more" href="#reviews">Читать отзыв <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></a>
             </article>
             <article class="review-card">
-              <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
-              <blockquote>
-                Специалисты компетентные, грамотные, оперативные и вежливые. Всегда приходят на
-                помощь даже в сложной ситуации.
-              </blockquote>
-              <footer><strong>А. В. Поваляев</strong><span>ООО «Форт-Н ХХI»</span></footer>
+              <div class="review-meta"><div class="stars" aria-label="Оценка 5 из 5">★★★★★</div><time datetime="2021-09-30">30.09.2021</time></div>
+              <strong class="review-company">ООО «Форт-Н ХХI»</strong>
+              <span class="review-position">Генеральный директор Татьяна Алаева</span>
+              <blockquote>Специалисты компетентные, грамотные, оперативные и вежливые. Всегда приходят на помощь даже в сложной ситуации, подробно разъясняют порядок оформления и предлагают понятные решения. Сотрудничеством остались довольны и готовы рекомендовать компанию партнёрам.</blockquote>
+              <a class="review-more" href="#reviews">Читать отзыв <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></a>
             </article>
+          </div>
+          <div class="review-platforms" aria-label="Площадки с отзывами клиентов">
+            <div><strong>4,9 <img src="assets/icons/star-yellow.svg" alt="" /></strong><img src="assets/icons/yandex-logo.svg" alt="Яндекс" /></div>
+            <div><strong>5,0 <img src="assets/icons/star-yellow.svg" alt="" /></strong><img src="assets/icons/google-logo.svg" alt="Google" /></div>
+            <div><strong>5,0 <img src="assets/icons/star-yellow.svg" alt="" /></strong><img src="assets/icons/2gis-logo.svg" alt="2ГИС" /></div>
+            <div><strong>4,9 <img src="assets/icons/star-yellow.svg" alt="" /></strong><img src="assets/icons/zoon-logo.svg" alt="Zoon" /></div>
           </div>
         </div>
       </section>
 
-      <section class="section faq-section">
+      <section class="section faq-section" id="faq">
         <div class="container faq-grid">
-          <div class="faq-intro">
+          <div class="faq-intro faq-intro-card">
             <h2><span>Частые</span> вопросы</h2>
-            <p>Задайте вопрос эксперту или позвоните — поможем разобраться в требованиях.</p>
+            <p>Не нашли ответа? Задайте вопрос эксперту — поможем разобраться в требованиях и подскажем дальнейшие действия.</p>
             <button class="button button-primary" type="button" data-open-application>
-              Задать вопрос
+              Задать вопрос <img class="button-icon" src="assets/icons/arrow-right-blue.svg" alt="" />
             </button>
+            <p class="faq-consult-caption">Консультация по телефону</p>
+            <a class="faq-contact" href="tel:88007076612"><img src="assets/icons/phone-blue-small.svg" alt="" />8 (800) 707-66-12</a>
           </div>
 
           <div class="accordion">
@@ -460,7 +450,7 @@
         </div>
       </section>
 
-      <section class="section section-white articles-section">
+      <section class="section section-white articles-section" id="articles">
         <div class="container">
           <div class="section-heading">
             <h2><span>Материалы и изменения</span><br />в сертификации</h2>
@@ -472,14 +462,14 @@
           <div class="articles-layout">
             <div class="article-grid">
               <article class="article-card">
-                <img src="public/assets/bb6ee.png" alt="Контейнерные перевозки товаров из Китая" />
-                <span class="tag">ВЭД и импорт</span>
+                <img src="assets/container-2.webp" alt="Контейнерные перевозки товаров из Китая" />
+                <span class="tag"><img src="assets/icons/folder-blue.svg" alt="" />ВЭД и импорт</span>
                 <h3>Сертификация товаров из Китая: реальные сложности и чек-лист решений</h3>
                 <p>9 мин · 31 августа 2026</p>
               </article>
               <article class="article-card">
-                <img src="public/assets/9d2e8.png" alt="Работа специалиста с документами" />
-                <span class="tag">Документы</span>
+                <img src="assets/image_2.webp" alt="Специалист с документами" />
+                <span class="tag"><img src="assets/icons/document-blue-small.svg" alt="" />Документы</span>
                 <h3>Как восстановить утерянный сертификат или декларацию</h3>
                 <p>9 мин · 31 августа 2026</p>
               </article>
@@ -489,71 +479,105 @@
               <h3>Новости</h3>
               <a href="#"
                 ><strong>Новости сертификации и техрегулирования ЕАЭС</strong
-                ><span>31 августа 2026</span></a
+                ><span class="news-date"><img src="assets/icons/calendar-grey.svg" alt="" />31 августа 2026</span></a
               >
               <a href="#"
                 ><strong>Изменения в ТР ТС 017/2011: что важно знать бизнесу</strong
-                ><span>31 августа 2026</span></a
+                ><span class="news-date"><img src="assets/icons/calendar-grey.svg" alt="" />31 августа 2026</span></a
               >
-              <a href="#"
-                ><strong>Новые требования к маркировке импортной продукции</strong
-                ><span>28 августа 2026</span></a
-              >
+              <a class="button button-outline news-all-button" href="#articles">Все статьи <img class="button-icon" src="assets/icons/arrow-up-right-blue.svg" alt="" /></a>
             </aside>
           </div>
+          
         </div>
       </section>
 
       <section class="bottom-cta">
         <div class="container bottom-cta-card">
-          <div>
-            <p class="eyebrow light">Начните с консультации</p>
-            <h2>Получите точный список документов для вашей продукции</h2>
+          <div class="bottom-form-card">
+            <div class="bottom-form-copy">
+              <h2>Получите <span>консультацию</span><br />эксперта</h2>
+              <form class="bottom-form" data-contact-form>
+                <input type="text" name="name" placeholder="Ваше имя" required />
+                <input type="tel" name="phone" placeholder="Телефон" required />
+                <input type="text" name="product" placeholder="Какая у вас продукция?" required />
+                <label class="consent"><input type="checkbox" name="consent" required /><span>Я согласен(на) с <a href="#">политикой конфиденциальности</a> и <a href="#">обработкой персональных данных</a></span></label>
+                <button class="button button-primary" type="submit">Получить консультацию</button>
+              </form>
+            </div>
+            <aside class="bottom-expert">
+              <strong class="bottom-expert-title">На консультации:</strong>
+              <ul class="bottom-expert-list">
+                <li><img src="assets/icons/arrow-double-down-right.svg" alt="" />Определим, какие документы нужны для вашей продукции</li>
+                <li><img src="assets/icons/arrow-double-down-right.svg" alt="" />Объясним порядок оформления и необходимые документы</li>
+                <li><img src="assets/icons/arrow-double-down-right.svg" alt="" />Сориентируем по предварительным срокам и стоимости</li>
+              </ul>
+              <div class="bottom-expert-person">
+                <img src="assets/andrey.png" alt="Андрей, эксперт СЕРТЕКС" />
+                <span><strong>Андрей</strong><small>Эксперт по сертификации</small></span>
+              </div>
+            </aside>
           </div>
-          <button class="button button-light button-large" type="button" data-open-application>
-            Получить консультацию
-          </button>
         </div>
       </section>
     </main>
 
     <footer class="site-footer" id="footer">
       <div class="container footer-grid">
-        <div class="footer-brand">
-          <img src="public/assets/5d843.svg" alt="СЕРТЕКС" />
-          <p>Центр по сертификации продукции в России и странах ЕАЭС.</p>
-          <div class="socials">
-            <a href="#" aria-label="Telegram"><img src="public/assets/02f19.svg" alt="" /></a>
-            <a href="#" aria-label="MAX"><img src="public/assets/b1e8e.svg" alt="" /></a>
-            <a href="#" aria-label="WhatsApp"><img src="public/assets/72646.svg" alt="" /></a>
-            <a href="#" aria-label="ВКонтакте"><img src="public/assets/89595.svg" alt="" /></a>
-          </div>
-        </div>
-        <div>
+        <div class="footer-column">
           <h3>Услуги</h3>
+          <a href="#services">Свидетельства государственной регистрации (СГР)</a>
+          <a href="#services">Добровольная сертификация</a>
           <a href="#services">Сертификаты соответствия</a>
-          <a href="#services">Декларации соответствия</a>
-          <a href="#services">СГР</a>
-          <a href="#process">Испытания продукции</a>
+          <a href="#services">Декларации о соответствии</a>
+          <a href="#services">Сертификаты ИСО (ISO)</a>
+          <a href="#services">Сертификационные испытания</a>
+          <a href="#services">Все услуги ↗</a>
         </div>
-        <div>
+        <div class="footer-column">
+          <h3>Отрасли</h3>
+          <a href="#industries">Пищевая продукция</a>
+          <a href="#industries">Косметика и парфюмерия</a>
+          <a href="#industries">Химическая продукция</a>
+          <a href="#industries">Упаковка</a>
+          <a href="#industries">Лёгкая промышленность</a>
+          <a href="#industries">Электроника</a>
+          <a href="#industries">Игрушки</a>
+          <a href="#industries">Все отрасли ↗</a>
+        </div>
+        <div class="footer-column">
           <h3>Компания</h3>
           <a href="#about">О компании</a>
+          <a href="#experts">Эксперты</a>
+          <a href="#consultation">Цены</a>
           <a href="#reviews">Отзывы</a>
-          <a href="#industries">Отрасли</a>
-          <a href="#consultation">Стоимость</a>
+          <a href="#articles">Блог</a>
+          <a href="#articles">Новости</a>
+          <a href="#footer">Контакты</a>
         </div>
         <div class="footer-contacts">
-          <h3>Контакты</h3>
-          <a href="tel:88007076612">8 (800) 707 66 12</a>
-          <a href="tel:84956443810">8 (495) 644 38 10</a>
-          <a href="mailto:info@sertex.org">info@sertex.org</a>
-          <p>Москва, Россия</p>
+          <span class="footer-kicker">Звонок бесплатный из России</span>
+          <a class="footer-phone" href="tel:88007076612">8 (800) 707-66-12</a>
+          <button class="footer-contact-button" type="button" data-open-application>Связаться</button>
+          <a class="footer-email" href="mailto:info@sertex.org"><img src="assets/icons/envelope-white.svg" alt="" />info@sertex.org</a>
+          <p>123060, г. Москва, ул. Маршала Рыбалко, д. 2, корп. 9</p>
+          <a class="footer-map-link" href="#about">Показать на карте</a>
+          <div class="socials">
+            <a href="#" aria-label="MAX"><img src="assets/icons/max.svg" alt="" /></a>
+            <a href="#" aria-label="ВКонтакте"><img src="assets/icons/vk-blue.svg" alt="" /></a>
+            <a href="#" aria-label="WhatsApp"><img src="assets/icons/whatsapp-white.svg" alt="" /></a>
+            <a href="#" aria-label="Одноклассники"><span>ОК</span></a>
+            <a href="#" aria-label="Telegram"><img src="assets/icons/telegram-white.svg" alt="" /></a>
+          </div>
         </div>
       </div>
       <div class="container footer-bottom">
-        <span>© 2026 СЕРТЕКС</span>
-        <a href="#">Политика конфиденциальности</a>
+        <span>© 2026 ООО «СЕРТЕКС». Все права защищены.</span>
+        <div>
+          <a href="#">Политика конфиденциальности <img src="assets/icons/arrow-up-right-grey-small.svg" alt="" /></a>
+          <a href="#">Согласие на обработку персональных данных <img src="assets/icons/arrow-up-right-grey-small.svg" alt="" /></a>
+          <a href="#">Политика обработки cookie <img src="assets/icons/arrow-up-right-grey-small.svg" alt="" /></a>
+        </div>
       </div>
     </footer>
 
@@ -611,7 +635,8 @@
       </div>
     </div>
 
-    <script src="vendor/jquery.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

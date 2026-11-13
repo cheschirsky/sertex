@@ -4,31 +4,31 @@ $(function () {
       title: "Декларации соответствия",
       description:
         "Подтверждаем соответствие продукции требованиям технических регламентов ЕАЭС. Помогаем определить схему декларирования, провести испытания и зарегистрировать документ.",
-      image: "public/assets/6a87c.png",
+      image: "assets/image_96.webp",
     },
     certificate: {
       title: "Сертификаты соответствия",
       description:
         "Организуем сертификационные испытания, готовим комплект документов и сопровождаем оформление сертификата на серийный выпуск или партию продукции.",
-      image: "public/assets/c2197.png",
+      image: "assets/image_96.webp",
     },
     registration: {
       title: "Свидетельства государственной регистрации",
       description:
         "Проверяем состав и маркировку, организуем необходимые исследования и сопровождаем государственную регистрацию продукции.",
-      image: "public/assets/bb6ee.png",
+      image: "assets/container.webp",
     },
     marketplace: {
       title: "Документы для маркетплейсов",
       description:
         "Определяем обязательные документы для карточки товара и помогаем подготовить подтверждение соответствия требованиям площадок.",
-      image: "public/assets/9d2e8.png",
+      image: "assets/image_2.webp",
     },
     technical: {
       title: "Техническая документация",
       description:
         "Разрабатываем технические условия, паспорта, руководства по эксплуатации, обоснования безопасности и другую документацию.",
-      image: "public/assets/3f29d.png",
+      image: "assets/image_96.webp",
     },
   };
 
@@ -93,18 +93,17 @@ $(function () {
 
   $(".service-item").on("click", function () {
     const $button = $(this);
-    const data = serviceData[$button.data("service")];
-    if (!data) return;
+    const $item = $button.closest(".service-accordion-item");
+    const willOpen = !$item.hasClass("open");
 
-    $(".service-item").removeClass("active").find("b").text("+");
-    $button.addClass("active").find("b").text("−");
+    $(".service-accordion-item").removeClass("open")
+      .find(".service-item").removeClass("active").attr("aria-expanded", "false")
+      .find("b img").css("transform", "none");
 
-    $("#service-title").text(data.title);
-    $("#service-description").text(data.description);
-    $("#service-image").attr({
-      src: data.image,
-      alt: data.title,
-    });
+    if (willOpen) {
+      $item.addClass("open");
+      $button.addClass("active").attr("aria-expanded", "true").find("b img").css("transform", "rotate(45deg)");
+    }
   });
 
   $(".accordion-item > button").on("click", function () {
@@ -172,4 +171,35 @@ $(function () {
     $navigation.removeClass("open");
     $menuButton.attr("aria-expanded", "false");
   });
+
+  // Expand and collapse the additional expert specialties.
+  $(document).on("click", ".expert-more", function () {
+    const $button = $(this);
+    const $card = $button.closest(".expert-card");
+    const expanded = !$card.hasClass("expanded");
+    $card.toggleClass("expanded", expanded);
+    $card.find(".expert-extra").prop("hidden", !expanded);
+    $button.attr("aria-expanded", String(expanded));
+    $button.contents().filter(function () { return this.nodeType === 3; }).first()
+      .replaceWith(expanded ? "− скрыть категории " : "+ ещё 3 категории ");
+  });
+
+  // Slick carousel for six expert cards; cards remain scrollable if CDN is unavailable.
+  if ($.fn.slick && $(".expert-slider").length) {
+    $(".expert-slider").slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: $(".expert-prev"),
+      nextArrow: $(".expert-next"),
+      dots: false,
+      responsive: [
+        { breakpoint: 1100, settings: { slidesToShow: 4 } },
+        { breakpoint: 800, settings: { slidesToShow: 3 } },
+        { breakpoint: 560, settings: { slidesToShow: 2 } },
+        { breakpoint: 380, settings: { slidesToShow: 1 } }
+      ]
+    });
+  }
 });
