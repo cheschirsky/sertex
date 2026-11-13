@@ -6872,9 +6872,9 @@ body.header-fixed {
    ШАПКА: ранний переход меню на компактный режим
    ========================================================================== */
 
-/* До 1200px горизонтальная навигация уже не помещается стабильно:
-   заменяем её одной кнопкой меню вместо появления полос прокрутки. */
-@media (max-width: 1199px) and (min-width: 901px) {
+/* До 1100px горизонтальная навигация переходит в компактный режим.
+   При ширине 1101–1200px сохраняем обычное меню и полноценную фиксированную шапку. */
+@media (max-width: 1100px) and (min-width: 901px) {
   .main-nav .nav-links {
     display: none !important;
     overflow: visible;
@@ -6960,7 +6960,7 @@ body.header-fixed {
 }
 
 
-@media (max-width: 1199px) and (min-width: 901px) {
+@media (max-width: 1100px) and (min-width: 901px) {
   .site-header:not(.is-fixed) .mobile-drawer {
     top: 66px;
   }
