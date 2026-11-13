@@ -6627,3 +6627,18 @@ button.review-more {
     background-color: #082b4d;
   }
 }
+
+/* Мега-меню «Услуги»: размеры текста и выравнивание верхних строк. */
+@media (min-width: 821px) {
+  #mega-services .mega-services-cats a {
+    font-size: 18px;
+  }
+
+  #mega-services .mega-services-sub {
+    padding-top: 28px;
+  }
+
+  #mega-services .mega-services-sub .mega-sub-link {
+    font-size: 16px;
+  }
+}
