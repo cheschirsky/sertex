@@ -263,14 +263,14 @@ $(function () {
       }
     ],
     industries: [
-      { title: "Пищевая промышленность", url: "#industries" },
-      { title: "Парфюмерно-косметическая продукция", url: "#industries" },
-      { title: "Легкая промышленность", url: "#industries" },
-      { title: "Игрушки и детские товары", url: "#industries" },
-      { title: "Электроника", url: "#industries" },
-      { title: "Упаковка", url: "#industries" },
-      { title: "Машины и оборудование", url: "#industries" },
-      { title: "Химическая промышленность", url: "#industries" }
+      { title: "Пищевая промышленность", url: "industries.html#industries" },
+      { title: "Парфюмерно-косметическая продукция", url: "industries.html#industries" },
+      { title: "Легкая промышленность", url: "industries.html#industries" },
+      { title: "Игрушки и детские товары", url: "industries.html#industries" },
+      { title: "Электроника", url: "industries.html#industries" },
+      { title: "Упаковка", url: "industries.html#industries" },
+      { title: "Машины и оборудование", url: "industries.html#industries" },
+      { title: "Химическая промышленность", url: "industries.html#industries" }
     ]
   };
 
