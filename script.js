@@ -456,10 +456,9 @@ $(function () {
   const $topbar = $(".topbar");
 
   function handleFixedHeader() {
-    const threshold = $topbar.outerHeight() || 92;
-    const isFixed = $(window).scrollTop() > threshold;
+    // Фиксированная навигация появляется с первого пикселя прокрутки.
+    const isFixed = $(window).scrollTop() > 0;
     $header.toggleClass("is-fixed", isFixed);
-    $("body").toggleClass("header-fixed", isFixed);
   }
 
   $(window).on("scroll resize", handleFixedHeader);
