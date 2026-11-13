@@ -286,13 +286,10 @@ $(function () {
     );
 
     const subHtml = cat.items
-      .map(function (item) {
-        const subChildren = item.children
-          ? '<ul class="mega-sub-children">' +
-            item.children.map(function (ch) { return '<li><a href="' + item.url + '">' + ch + "</a></li>"; }).join("") +
-            "</ul>"
-          : "";
-        return '<div class="mega-sub-group"><a class="mega-sub-link" href="' + item.url + '">' + item.title + "</a>" + subChildren + "</div>";
+      .flatMap(function (item) {
+        return [item.title].concat(item.children || []).map(function (title) {
+          return '<a class="mega-sub-link" href="' + item.url + '">' + title + "</a>";
+        });
       })
       .join("");
 
@@ -366,13 +363,10 @@ $(function () {
 
     $("#mobile-sub-title").text("/ " + cat.short);
     const itemsHtml = cat.items
-      .map(function (item) {
-        const chHtml = item.children
-          ? '<ul class="mobile-sub-nested">' +
-            item.children.map(function (ch) { return '<li><a href="' + item.url + '" data-close-drawer>' + ch + "</a></li>"; }).join("") +
-            "</ul>"
-          : "";
-        return '<li><a href="' + item.url + '" data-close-drawer>' + item.title + "</a>" + chHtml + "</li>";
+      .flatMap(function (item) {
+        return [item.title].concat(item.children || []).map(function (title) {
+          return '<li><a href="' + item.url + '" data-close-drawer>' + title + "</a></li>";
+        });
       })
       .join("");
 
