@@ -6347,7 +6347,7 @@ button.review-more {
 .process-section {
   position: relative;
   z-index: 1;
-  padding-top: calc(var(--section-space, 0px) + 80px);
+  padding-top: 164px;
 }
 
 /* Материалы занимают всю ширину экрана; CTA заходит на нижнюю часть секции. */
@@ -6389,7 +6389,7 @@ button.review-more {
 .site-footer {
   position: relative;
   z-index: 1;
-  padding-top: calc(var(--footer-padding-top, 0px) + 80px);
+  padding-top: 152px;
 }
 
 /* Мобильная версия сохраняет перекрытия, но использует меньший шаг. */
