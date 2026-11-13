@@ -1,0 +1,17 @@
+/* Страница «Отрасли» */
+.industries-page-section { padding-block: 54px 88px; }
+.industries-page-section .section-heading { margin-bottom: 42px; }
+.industries-page-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 30px 22px; }
+.industries-page-grid .industry-card { min-width: 0; gap: 12px; }
+.industries-page-grid .industry-card img { aspect-ratio: 1.08; border-radius: 14px; }
+.industries-page-grid .industry-card span { max-width: 220px; }
+@media (max-width: 1160px) {
+ .industries-page-section { padding-block: 42px 68px; }
+ .industries-page-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 18px; }
+}
+@media (max-width: 640px) {
+ .industries-page-section { padding-block: 30px 52px; }
+ .industries-page-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; }
+ .industries-page-grid .industry-card { font-size: 13px; }
+ .industries-page-grid .industry-card img { border-radius: 10px; }
+}
