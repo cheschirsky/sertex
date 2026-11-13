@@ -1290,7 +1290,8 @@ textarea:focus-visible {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 310px;
+  /* Широкая колонка под видео и отдельная колонка под статистику. */
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
   gap: 54px 48px;
   align-items: center;
 }
@@ -1300,7 +1301,7 @@ textarea:focus-visible {
 .about-intro {
   grid-column: 1 / 2;
   max-width: 560px;
-  align-self: center;
+  align-self: start;
 }
 
 .about-intro h2 {
@@ -1675,7 +1676,6 @@ textarea:focus-visible {
 }
 
 
-
 /* ==========================================================================
    13. ЭКСПЕРТЫ (EXPERTS) + СЛАЙДЕР SLICK
    ========================================================================== */
@@ -1755,7 +1755,7 @@ textarea:focus-visible {
   transform: none;
 }
 
-/* --- Сетка карточек / слайдер (3 полные карточки + выглядывающая 4-я) --- */
+/* --- Сетка карточек / слайдер (4 полные карточки + часть 5-й) --- */
 
 .expert-slider {
   display: block;
@@ -2103,6 +2103,21 @@ textarea:focus-visible {
   content: "";
 }
 
+/* Крайние разделители замыкают ряд рейтинговых площадок, как в макете. */
+.review-platforms > div:first-child::before {
+  left: 0;
+}
+
+.review-platforms > div:last-child::after {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  bottom: 6px;
+  width: 1px;
+  background: #dce3eb;
+  content: "";
+}
+
 .review-platforms > div > img {
   max-width: 112px;
   max-height: 30px;
@@ -2124,7 +2139,6 @@ textarea:focus-visible {
   height: 16px;
   object-fit: contain;
 }
-
 
 
 /* ==========================================================================
@@ -2677,7 +2691,8 @@ textarea:focus-visible {
 .site-footer {
   background: #082b4d;
   color: rgb(255 255 255 / 72%);
-  padding-block: 72px 48px;
+  padding-block: 72px 32px;
+  border-radius: 24px 24px 0 0;
 }
 
 .footer-grid {
@@ -2709,7 +2724,7 @@ textarea:focus-visible {
 
 .footer-grid > div > a.footer-more-link {
   margin-top: 16px;
-  color: #4f94f0;
+  color: #5E7495;
 }
 
 .footer-grid > div > a.footer-more-link:hover {
@@ -2721,6 +2736,16 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.footer-logo {
+  display: block;
+  width: 141px;
+  height: 32px;
+  margin: 0 0 24px;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+  object-position: left center;
 }
 
 .footer-phone-note {
@@ -2786,7 +2811,7 @@ textarea:focus-visible {
   color: var(--white) !important;
 }
 
-/* Соцсети */
+/* Социальные сети */
 .socials {
   display: flex;
   gap: 10px;
@@ -2804,6 +2829,13 @@ textarea:focus-visible {
   font-size: 12px;
   font-weight: 500;
   transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.socials img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .socials a:hover {
@@ -2833,15 +2865,15 @@ textarea:focus-visible {
   background: #2aabee;
 }
 
-/* Нижняя полоса копирайта */
+/* Нижняя полоса: копирайт слева, юридические ссылки справа */
 .footer-bottom {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 56px;
-  padding-top: 0;
-  border-top: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid rgb(255 255 255 / 16%);
   font-size: 13px;
 }
 
@@ -2854,11 +2886,12 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
 }
 
 .footer-legal a {
-  color: #4f94f0;
+  color: #1961CC;
   transition: color 180ms ease;
 }
 
@@ -3534,6 +3567,87 @@ button.review-more {
 }
 
 /* ==========================================================================
+   DESKTOP: FAQ, МАТЕРИАЛЫ И НИЖНЯЯ CTA-ФОРМА
+   Эти уточнения применяются только на широких экранах; адаптивные правила ниже
+   остаются без изменений.
+   ========================================================================== */
+@media (min-width: 1161px) {
+  /* FAQ — отдельная светлая панель с округлёнными краями. */
+  .faq-section {
+    width: min(1420px, calc(100% - 32px));
+    margin: 0 auto 36px;
+    border-radius: 40px;
+  }
+
+  /* Карточки статей в макете имеют широкое горизонтальное изображение. */
+  .article-card > img {
+    aspect-ratio: 1.78;
+  }
+
+  /* Синяя внешняя панель и две внутренние карточки формы. */
+  .bottom-cta {
+    width: min(1420px, calc(100% - 32px));
+    margin: 0 auto;
+    border-radius: 40px;
+    padding-block: 40px 56px;
+    background: var(--blue);
+  }
+
+  .bottom-cta-box {
+    display: grid;
+    width: min(1340px, calc(100% - 48px));
+    max-width: 1340px;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.85fr);
+    align-items: stretch;
+    gap: 24px;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .bottom-cta-form-col {
+    border-radius: 18px;
+    padding: 34px 38px;
+    background: var(--white);
+  }
+
+  .bottom-cta h2 {
+    margin-bottom: 24px;
+    font-size: 34px;
+  }
+
+  .bottom-form {
+    gap: 12px;
+  }
+
+  .bottom-form input:not([type="checkbox"]) {
+    height: 52px;
+  }
+
+  .bottom-form button.full {
+    min-height: 52px;
+  }
+
+  .consult-card {
+    border-radius: 18px;
+    padding: 28px 26px;
+    background: #f2f6fb;
+  }
+
+  .consult-card h3 {
+    margin-bottom: 18px;
+    font-size: 19px;
+  }
+
+  .consult-card ul {
+    gap: 14px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+}
+
+
+/* ==========================================================================
    20. АДАПТИВ (MEDIA QUERIES)
    ========================================================================== */
 
@@ -3609,10 +3723,10 @@ button.review-more {
     width: min(100% - 36px, 720px);
   }
 
-	.header-search-form {
+  .header-search-form {
     display: none;
   }
-  
+
   .topbar {
     min-height: 78px;
   }
@@ -3756,7 +3870,7 @@ button.review-more {
   .articles-section {
     border-radius: 38px;
   }
-  
+
   .main-nav {
     display: none !important;
   }
@@ -4327,7 +4441,7 @@ button.review-more {
   .modal-services {
     grid-template-columns: 1fr;
   }
-  
+
   .application-dialog {
     width: calc(100% - 16px);
     border-radius: 20px;
@@ -4377,7 +4491,7 @@ button.review-more {
     min-height: 50px;
     font-size: 15px;
   }
-  
+
   .service-detail-dialog {
     width: calc(100% - 16px);
     border-radius: 20px;
@@ -4421,7 +4535,7 @@ button.review-more {
     min-height: 50px;
     font-size: 15px;
   }
-  
+
   .question-dialog {
     width: calc(100% - 16px);
     border-radius: 20px;
@@ -4517,7 +4631,7 @@ button.review-more {
     justify-self: end;
     margin-top: 0;
   }
-  
+
   body.header-fixed {
     padding-top: 66px;
   }
@@ -4552,7 +4666,7 @@ button.review-more {
     justify-content: flex-start;
     gap: 24px;
   }
-  
+
     body.header-fixed {
     padding-top: 74px;
   }
@@ -4574,7 +4688,7 @@ button.review-more {
   .site-header.is-fixed .mobile-drawer {
     top: 74px;
   }
-  
+
   .review-dialog,
   .review-letter-dialog {
     width: calc(100% - 16px);
@@ -5488,12 +5602,10 @@ button.review-more {
   .faq-contact {
     font-size: 17px;
   }
-}
 
 /* ==========================================================================
    ФИНАЛЬНЫЕ ПРАВКИ ДЛЯ 360px (<= 640px)
    ========================================================================== */
-@media (max-width: 640px) {
   /* --- О компании: статистика в 1 столбец друг под другом --- */
   .about-section .stats {
     display: flex;
@@ -5662,4 +5774,125 @@ button.review-more {
 }
 
 
+/* Корректировки по эталонным макетам */
+.nav-dropdown-card .nav-about-center::before,
+.nav-dropdown-card .nav-about-center::after {
+  content: none !important;
+  display: none !important;
+}
 
+.mega-panel {
+  background: #f2f4f7;
+}
+
+#mega-services .mega-services-grid {
+  grid-template-columns: minmax(280px, 32%) minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+}
+
+#mega-services .mega-services-cats {
+  min-height: 100%;
+  border-radius: 0;
+  padding: 18px 16px;
+  background: #fff;
+}
+
+#mega-services .mega-services-sub {
+  min-width: 0;
+  padding: 22px 34px 22px 38px;
+  background: #f2f4f7;
+}
+
+.mega-sub-link,
+.mega-industries-list a {
+  padding-left: 0;
+  padding-right: 22px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.mega-sub-link::before,
+.mega-industries-list a::before {
+  content: none;
+}
+
+.mega-sub-link::after,
+.mega-industries-list a::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: var(--blue);
+  content: "›";
+  font-size: 21px;
+  line-height: 1;
+  opacity: 0;
+  transform: translate(-4px, -50%);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.mega-sub-link:hover,
+.mega-industries-list a:hover {
+  color: var(--blue);
+}
+
+.mega-sub-link:hover::after,
+.mega-industries-list a:hover::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+#mega-industries {
+  background: #f2f4f7;
+}
+
+#mega-industries .mega-industries-list a {
+  padding-block: 6px;
+}
+
+.expert-photo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.expert-photo img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.socials {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.socials a {
+  flex: 0 0 36px;
+}
+
+.socials img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.socials a.social-dzen {
+  background: #fff;
+}
+.socials a.social-vk { background: #2787f5; }
+.socials a.social-wa { background: #25d366; }
+.socials a.social-tg { background: #2aabee; }
+.socials a.social-max { background: linear-gradient(135deg, #6d5dfc, #38bdf8); }
+
+@media (max-width: 650px) {
+  .socials { gap: 8px; }
+  .socials a { width: 34px; height: 34px; flex-basis: 34px; }
+  .socials img { width: 19px; height: 19px; }
+  #mega-services .mega-services-grid { grid-template-columns: 1fr; }
+  #mega-services .mega-services-sub { padding: 18px 16px; }
+}

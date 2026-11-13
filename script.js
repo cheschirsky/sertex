@@ -1,38 +1,9 @@
 $(function () {
-  const serviceData = {
-    declaration: {
-      title: "Декларации соответствия",
-      description:
-        "Подтверждаем соответствие продукции требованиям технических регламентов ЕАЭС. Помогаем определить схему декларирования, провести испытания и зарегистрировать документ.",
-      image: "assets/image_96.webp",
-    },
-    certificate: {
-      title: "Сертификаты соответствия",
-      description:
-        "Организуем сертификационные испытания, готовим комплект документов и сопровождаем оформление сертификата на серийный выпуск или партию продукции.",
-      image: "assets/image_96.webp",
-    },
-    registration: {
-      title: "Свидетельства государственной регистрации",
-      description:
-        "Проверяем состав и маркировку, организуем необходимые исследования и сопровождаем государственную регистрацию продукции.",
-      image: "assets/container.webp",
-    },
-    marketplace: {
-      title: "Документы для маркетплейсов",
-      description:
-        "Определяем обязательные документы для карточки товара и помогаем подготовить подтверждение соответствия требованиям площадок.",
-      image: "assets/image_2.webp",
-    },
-    technical: {
-      title: "Техническая документация",
-      description:
-        "Разрабатываем технические условия, паспорта, руководства по эксплуатации, обоснования безопасности и другую документацию.",
-      image: "assets/image_96.webp",
-    },
-  };
-
   const $body = $("body");
+
+  // ---------------------------------------------------------------------------
+  // Модальные окна
+  // ---------------------------------------------------------------------------
 
   function closeModal($modal) {
     if (!$modal.length) return;
@@ -91,6 +62,9 @@ $(function () {
     closeModal($(this).closest(".modal"));
   });
 
+  // ---------------------------------------------------------------------------
+  // Справочник подуслуг для окна «Подробнее об услуге»
+  // ---------------------------------------------------------------------------
   const serviceSubitems = {
     "Свидетельства государственной регистрации (СГР)": [
       "СГР на косметическую и парфюмерную продукцию",
@@ -150,8 +124,8 @@ $(function () {
     ]
   };
 
-  $(".service-item").on("click", function (event) {
-    if ($(this).is("a")) return;
+  // Открытие списка подуслуг из аккордеона услуг.
+  $(".service-accordion-item > button.service-item").on("click", function (event) {
 
     event.preventDefault();
     const title = $(this).find("span").first().text().trim();
@@ -179,6 +153,7 @@ $(function () {
     closeModal($("#service-detail-modal"));
   });
 
+  // FAQ: одновременно раскрыт только один вопрос.
   $(".accordion-item > button").on("click", function () {
     const $button = $(this);
     const $item = $button.closest(".accordion-item");
@@ -197,7 +172,8 @@ $(function () {
     }
   });
 
-    $("[data-contact-form]").on("submit", function (event) {
+  // Обработка форм интерфейса. Отправку на сервер нужно подключить отдельно.
+  $("[data-contact-form]").on("submit", function (event) {
     event.preventDefault();
 
     const $form = $(this);
@@ -219,23 +195,7 @@ $(function () {
     }, 3000);
   });
 
-  $(".search-form").on("submit", function (event) {
-    event.preventDefault();
-
-    const query = $(this).find("input").val().trim().toLowerCase();
-    closeModal($(this).closest(".modal"));
-
-    const sectionId = query.includes("отрасл") ? "industries" : "services";
-    document.getElementById(sectionId).scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-
-  const $menuButton = $(".mobile-menu-button");
-  const $navigation = $(".main-nav");
-
-    // Структура данных с сокращенным числом подуслуг (по 2 на каждую услугу) и 8 отраслями
+  // ---------------------------------------------------------------------------\n  // Данные и построение десктопного и мобильного меню\n  // ---------------------------------------------------------------------------\n  // Структура данных с сокращенным числом подуслуг (по 2 на каждую услугу) и 8 отраслями
   const megaMenuData = {
     services: [
       {
@@ -345,7 +305,7 @@ $(function () {
     $("#mobile-industries-list").append('<li><a href="' + ind.url + '" data-close-drawer>' + ind.title + "</a></li>");
   });
 
-  // Управление отображением мега-меню и мобильного сайдбара сохраняет базовые обработчики событий
+  // ---------------------------------------------------------------------------\n  // Поведение навигации и мобильного меню\n  // ---------------------------------------------------------------------------
   let closeMegaTimer = null;
   function showMega(name) {
     window.clearTimeout(closeMegaTimer);
@@ -394,10 +354,6 @@ $(function () {
     }
   }
 
-  $mobBtn.on("click", function () {
-    setDrawerOpen(!$drawer.hasClass("open"));
-  });
-
   $(document).on("click", "[data-go], [data-back]", function () {
     const target = $(this).data("go") || $(this).data("back");
     $(".mobile-level").prop("hidden", true).removeClass("active");
@@ -429,12 +385,7 @@ $(function () {
     setDrawerOpen(false);
   });
 
-  $navigation.find("a").on("click", function () {
-    $navigation.removeClass("open");
-    $menuButton.attr("aria-expanded", "false");
-  });
-
-  // Expand and collapse the additional expert specialties.
+  // ---------------------------------------------------------------------------\n  // Дополнительные категории экспертов и слайдер\n  // ---------------------------------------------------------------------------\n  // Expand and collapse the additional expert specialties.
   $(document).on("click", ".expert-more", function () {
     const $button = $(this);
     const $card = $button.closest(".expert-card");
@@ -446,7 +397,7 @@ $(function () {
       .replaceWith(expanded ? "− скрыть категории " : "+ ещё 3 категории ");
   });
 
-  // Slick carousel for six expert cards; cards remain scrollable if CDN is unavailable.
+  // Slick carousel for five expert cards; cards remain available if the CDN is unavailable.
   if ($.fn.slick && $(".expert-slider").length) {
     $(".expert-slider").slick({
       slidesToShow: 4,
@@ -466,14 +417,22 @@ $(function () {
   }
 
   
-  $(".header-search-form").on("submit", function (event) {
+  // ---------------------------------------------------------------------------\n  // Поиск, дополнительные модальные окна и фиксированная шапка\n  // ---------------------------------------------------------------------------\n  // Поиск в шапке и мобильном меню направляет к подходящему разделу.
+  $(".header-search-form, .mobile-search-form").on("submit", function (event) {
     event.preventDefault();
-    const query = $(this).find("input").val().trim().toLowerCase();
+
+    const query = String($(this).find('input[type="search"]').val() || "")
+      .trim()
+      .toLocaleLowerCase("ru");
+
     if (!query) return;
 
     const sectionId = query.includes("отрасл") ? "industries" : "services";
     const target = document.getElementById(sectionId);
+
     if (target) {
+      setDrawerOpen(false);
+      closeAllModals();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
@@ -485,7 +444,7 @@ $(function () {
     openModal("question-modal");
   });
   
-    $("[data-open-review-text]").on("click", function () {
+  $("[data-open-review-text]").on("click", function () {
     openModal("review-text-modal");
   });
 
@@ -494,7 +453,7 @@ $(function () {
   });
 
   
-    const $header = $(".site-header");
+  const $header = $(".site-header");
   const $topbar = $(".topbar");
 
   function handleFixedHeader() {
