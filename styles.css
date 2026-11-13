@@ -6642,3 +6642,208 @@ button.review-more {
     font-size: 16px;
   }
 }
+
+
+/* ==========================================================================
+   ЕДИНАЯ ФИКСИРОВАННАЯ НАВИГАЦИЯ
+   --------------------------------------------------------------------------
+   Десктоп: полный ряд навигации.
+   901–1100px: основные разделы, телефон, заявка и бургер.
+   641–900px: две основные кнопки и бургер.
+   До 640px: липкая мобильная шапка с логотипом, телефоном и меню.
+   ========================================================================== */
+
+.site-header.is-fixed {
+  z-index: 85;
+}
+
+/* На десктопе и планшете фиксируется именно строка навигации.
+   Верхняя строка остаётся в потоке и уходит вверх при прокрутке. */
+.site-header.is-fixed .main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 80;
+  display: block !important;
+  border-top: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 8px 28px rgb(7 40 73 / 8%);
+  animation: slideDownNav 180ms ease;
+}
+
+.site-header.is-fixed .nav-inner {
+  min-height: 78px;
+}
+
+.site-header.is-fixed .topbar {
+  display: flex;
+  min-height: 78px;
+}
+
+.site-header.is-fixed .nav-hide-fixed {
+  display: none;
+}
+
+.site-header.is-fixed .nav-fixed-actions {
+  display: flex;
+}
+
+.site-header.is-fixed .nav-fixed-burger {
+  display: none;
+}
+
+.site-header.is-fixed .mobile-drawer {
+  z-index: 90;
+  top: 78px;
+}
+
+/* Бургер в фиксированной навигации: общий вид для ноутбука и планшета. */
+.site-header.is-fixed .nav-fixed-burger {
+  width: auto;
+  height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 16px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.menu-btn-burger {
+  display: inline-flex;
+  width: 17px;
+  height: 11px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.menu-btn-burger img {
+  display: block;
+  width: 17px;
+  height: 11px;
+  object-fit: contain;
+}
+
+.mobile-phone-btn img {
+  width: 22px;
+  height: 22px;
+  transform: rotate(90deg);
+}
+
+/* Ноутбук: бургер открывает то же полноэкранное меню, что и мобильная шапка. */
+@media (max-width: 1100px) and (min-width: 901px) {
+  .site-header.is-fixed .nav-links {
+    display: none;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex;
+    gap: 18px;
+    margin-left: auto;
+  }
+
+  .site-header.is-fixed .nav-fixed-burger {
+    display: inline-flex;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    display: flex;
+  }
+}
+
+/* Планшет: только «Все услуги», «Отрасли» и «Меню». */
+@media (max-width: 900px) and (min-width: 641px) {
+  .site-header.is-fixed .main-nav {
+    display: block !important;
+  }
+
+  .site-header.is-fixed .topbar {
+    min-height: 78px;
+  }
+
+  .site-header.is-fixed .nav-inner {
+    min-height: 78px;
+    gap: 12px;
+  }
+
+  .site-header.is-fixed .nav-mega-trigger {
+    flex: 1 1 0;
+  }
+
+  .site-header.is-fixed .services-button,
+  .site-header.is-fixed .nav-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-header.is-fixed .nav-links,
+  .site-header.is-fixed .nav-fixed-phone,
+  .site-header.is-fixed .nav-fixed-cta {
+    display: none;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex;
+    margin-left: 0;
+  }
+
+  .site-header.is-fixed .nav-fixed-burger {
+    display: inline-flex;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    display: flex;
+    top: 78px;
+  }
+}
+
+/* Телефон: сохраняем компактную шапку из макета 360px.
+   Основная навигационная строка здесь не появляется. */
+@media (max-width: 640px) {
+  .site-header.is-fixed {
+    position: sticky;
+    top: 0;
+    right: auto;
+    left: auto;
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 8px 24px rgb(7 40 73 / 8%);
+  }
+
+  .site-header.is-fixed .topbar {
+    display: flex;
+    min-height: 74px;
+  }
+
+  .site-header.is-fixed .main-nav {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .mobile-header-actions {
+    display: flex;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: none;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    display: flex;
+    top: 74px;
+  }
+}
+
+/* Фиксация не должна добавлять второй отступ странице. */
+body.header-fixed {
+  padding-top: 0 !important;
+}
