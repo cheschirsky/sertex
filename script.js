@@ -449,7 +449,7 @@ $(function () {
   // Slick carousel for six expert cards; cards remain scrollable if CDN is unavailable.
   if ($.fn.slick && $(".expert-slider").length) {
     $(".expert-slider").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       infinite: false,
       arrows: true,
@@ -457,13 +457,14 @@ $(function () {
       nextArrow: $(".expert-next"),
       dots: false,
       responsive: [
-        { breakpoint: 1100, settings: { slidesToShow: 4 } },
-        { breakpoint: 800, settings: { slidesToShow: 3 } },
-        { breakpoint: 560, settings: { slidesToShow: 2 } },
-        { breakpoint: 380, settings: { slidesToShow: 1 } }
+        { breakpoint: 1280, settings: { slidesToShow: 3 } },
+        { breakpoint: 1024, settings: { slidesToShow: 2 } },
+        { breakpoint: 640, settings: { slidesToShow: 1 } }
       ]
+
     });
   }
+
   
   $(".header-search-form").on("submit", function (event) {
     event.preventDefault();
