@@ -1,5 +1,5 @@
 /* Страница «Отрасли» */
-.industries-page-section { padding-block: 54px 88px; }
+.industries-page-section { padding-block: 54px 88px; background: var(--background); }
 .industries-page-section .section-heading { margin-bottom: 42px; }
 .industries-page-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 30px 22px; }
 .industries-page-grid .industry-card { min-width: 0; gap: 12px; }
