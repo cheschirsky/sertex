@@ -453,8 +453,6 @@ $(function () {
 
   
   const $header = $(".site-header");
-  const $topbar = $(".topbar");
-
   function handleFixedHeader() {
     // Фиксированная навигация появляется с первого пикселя прокрутки.
     const isFixed = $(window).scrollTop() > 0;
