@@ -14,63 +14,174 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="topbar container">
-        <a class="logo" href="#top" aria-label="СЕРТЕКС — на главную">
-          <img src="assets/icons/logo.svg" alt="СЕРТЕКС" />
-          <span>Центр по сертификации</span>
+  <div class="topbar container">
+    <a class="logo" href="#top" aria-label="СЕРТЕКС — на главную">
+      <img src="assets/icons/logo.svg" alt="СЕРТЕКС" />
+      <span>Центр по сертификации</span>
+    </a>
+
+    <form class="header-search-form" role="search">
+      <input type="search" name="q" placeholder="Поиск" aria-label="Поиск по сайту" />
+      <button type="submit" aria-label="Найти">
+        <img class="search-icon" src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
+      </button>
+    </form>
+
+    <div class="header-location">
+      <img src="assets/icons/emblem.svg" alt="" />
+      <span>Работаем по всей<br />России и ЕАЭС</span>
+    </div>
+
+    <a class="header-email" href="mailto:info@sertex.org">
+      <img src="assets/icons/envelope-blue.svg" alt="" aria-hidden="true" />info@sertex.org
+    </a>
+
+    <div class="header-phones">
+      <a href="tel:88007076612">8 (800) 707 66 12</a>
+      <a href="tel:84956443810">8 (495) 644 38 10</a>
+    </div>
+
+    <button class="button button-outline header-cta" type="button" data-open-application>
+      Оставить заявку
+    </button>
+
+    <div class="mobile-header-actions">
+      <button class="mobile-phone-btn" type="button" aria-label="Заказать звонок" data-open-application>
+        <img src="assets/icons/phone-blue-small.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="mobile-menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="menu-btn-label">Меню</span>
+        <span class="menu-btn-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn-close" aria-hidden="true">×</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Десктопная навигация -->
+  <nav class="main-nav" aria-label="Основная навигация">
+    <div class="container nav-inner">
+      <div class="nav-mega-trigger" data-mega="services">
+        <a class="button services-button" href="#services">
+          <img class="menu-icon" src="assets/icons/menu-blue-small.svg" alt="" aria-hidden="true" />
+          Все услуги
         </a>
-
-        <button class="search-button" type="button" data-open-search>
-          <span>Поиск</span>
-          <img class="search-icon" src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
-        </button>
-
-        <div class="header-location">
-          <img src="assets/icons/emblem.svg" alt="" />
-          <span>Работаем по всей<br />России и ЕАЭС</span>
-        </div>
-
-        <a class="header-email" href="mailto:info@sertex.org"><img src="assets/icons/envelope-blue.svg" alt="" aria-hidden="true" />info@sertex.org</a>
-
-        <div class="header-phones">
-          <a href="tel:88007076612">8 (800) 707 66 12</a>
-          <a href="tel:84956443810">8 (495) 644 38 10</a>
-        </div>
-
-        <button class="button button-outline header-cta" type="button" data-open-application>
-          Оставить заявку
-        </button>
-
-        <button
-          class="mobile-menu-button"
-          type="button"
-          aria-label="Открыть меню"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
       </div>
 
-      <nav class="main-nav" aria-label="Основная навигация">
-        <div class="container nav-inner">
-          <button class="button services-button" type="button" data-open-services>
-            <img class="menu-icon" src="assets/icons/menu-blue-small.svg" alt="" aria-hidden="true" />
-            Все услуги
-          </button>
-          <a class="nav-pill" href="#industries">Отрасли</a>
-          <div class="nav-links">
-            <a href="#services">Сертификаты</a>
-            <a href="#services">Декларации</a>
-            <a href="#services">СГР</a>
-            <a href="#services">Маркетплейсам</a>
-            <a href="#process">Испытания</a>
-            <a href="#about">О компании</a>
-            <a href="#consultation">Цены</a>
-            <a href="#footer">Контакты</a>
-          </div>
+      <div class="nav-mega-trigger" data-mega="industries">
+        <a class="nav-pill" href="#industries">Отрасли</a>
+      </div>
+
+      <div class="nav-links">
+		  <a class="nav-hide-fixed" href="#services">Сертификаты</a>
+		  <a class="nav-hide-fixed" href="#services">Декларации</a>
+		  <a class="nav-hide-fixed" href="#services">СГР</a>
+		  <a href="#services">Маркетплейсам</a>
+		  <a href="#process">Испытания</a>
+		  <div class="nav-dropdown">
+			<a href="#about" class="nav-dropdown-toggle">О компании</a>
+			<div class="nav-dropdown-card">
+			  <a href="#about">О центре</a>
+			  <a href="#experts">Эксперты</a>
+			  <a href="#articles">Блог</a>
+			  <a href="#articles">Новости</a>
+			</div>
+		  </div>
+		  <a href="#consultation">Цены</a>
+		  <a href="#footer">Контакты</a>
+		</div>
+
+		<!-- Правая часть для фиксированной шапки -->
+		<div class="nav-fixed-actions">
+		  <a class="nav-fixed-phone" href="tel:88007076612">8 (800) 707 66 12</a>
+		  <button class="button button-outline nav-fixed-cta" type="button" data-open-application>
+			Оставить заявку
+		  </button>
+		  <button class="mobile-menu-button nav-fixed-burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+			<span class="menu-btn-label">Меню</span>
+			<span class="menu-btn-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+			<span class="menu-btn-close" aria-hidden="true">×</span>
+		  </button>
+		</div>
+
+    </div>
+
+    <!-- Выпадающее мега-меню для десктопа -->
+    <div class="mega-menus-wrap">
+      <div class="mega-panel" id="mega-services" aria-hidden="true">
+        <div class="container mega-services-grid">
+          <ul class="mega-services-cats" id="desktop-service-cats"></ul>
+          <div class="mega-services-sub" id="desktop-service-sub"></div>
+          <button class="mega-close" type="button" aria-label="Закрыть меню">×</button>
         </div>
-      </nav>
-    </header>
+      </div>
+
+      <div class="mega-panel" id="mega-industries" aria-hidden="true">
+        <div class="container mega-industries-wrap">
+          <ul class="mega-industries-list" id="desktop-industries-list"></ul>
+          <button class="mega-close" type="button" aria-label="Закрыть меню">×</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Полноэкранное мобильное синее меню (3 уровня) -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <form class="mobile-search-form" role="search">
+        <input type="search" name="q" placeholder="Поиск" aria-label="Поиск по сайту" />
+        <button type="submit" aria-label="Найти">
+          <img src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
+        </button>
+      </form>
+
+      <!-- Уровень 1 -->
+      <div class="mobile-level active" data-level="root">
+        <ul class="mobile-nav-list">
+          <li><button type="button" data-go="services"><span class="m-icon-lines"></span>Все услуги<i class="m-arr">→</i></button></li>
+          <li><button type="button" data-go="industries">Отрасли<i class="m-arr">→</i></button></li>
+          <li><a href="#services" data-close-drawer>Маркетплейсам</a></li>
+          <li><a href="#process" data-close-drawer>Испытания</a></li>
+          <li><button type="button" data-go="about">О компании<i class="m-arr">→</i></button></li>
+          <li><a href="#footer" data-close-drawer>Контакты</a></li>
+        </ul>
+      </div>
+
+      <!-- Уровень 2: Услуги -->
+      <div class="mobile-level" data-level="services" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ Все услуги</span></button>
+        <ul class="mobile-nav-list" id="mobile-service-cats"></ul>
+      </div>
+
+      <!-- Уровень 3: Подуслуги -->
+      <div class="mobile-level" data-level="service-sub" hidden>
+        <button class="mobile-back" type="button" data-back="services">← <span id="mobile-sub-title">/ Услуги</span></button>
+        <ul class="mobile-sub-list" id="mobile-service-sub"></ul>
+      </div>
+
+      <!-- Уровень 2: Отрасли -->
+      <div class="mobile-level" data-level="industries" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ Отрасли</span></button>
+        <ul class="mobile-sub-list" id="mobile-industries-list"></ul>
+      </div>
+
+      <!-- Уровень 2: О компании -->
+      <div class="mobile-level" data-level="about" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ О компании</span></button>
+        <ul class="mobile-nav-list">
+          <li><a href="#about" data-close-drawer>О центре</a></li>
+          <li><a href="#experts" data-close-drawer>Эксперты</a></li>
+          <li><a href="#articles" data-close-drawer>Блог</a></li>
+          <li><a href="#articles" data-close-drawer>Новости</a></li>
+        </ul>
+      </div>
+
+      <button class="button button-light mobile-drawer-cta" type="button" data-open-application data-close-drawer>
+        Оставить заявку
+      </button>
+    </div>
+  </div>
+</header>
+
 
     <main id="top">
       <section class="hero container">
@@ -135,13 +246,13 @@
 
           <div class="services-layout">
             <div class="service-list">
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Свидетельства государственной регистрации (СГР)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Подготовим документы, организуем необходимые исследования и сопроводим получение свидетельства государственной регистрации продукции.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Добровольная сертификация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Поможем подтвердить заявленные свойства продукции и оформить добровольный сертификат для вашей компании.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификаты соответствия</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Определим подходящую схему сертификации, подготовим комплект документов и организуем испытания.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Техническая документация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Разработаем технические условия, паспорта, инструкции и другие документы для выпуска продукции.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Декларации о соответствии</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Проверим требования регламентов, поможем выбрать схему декларирования и зарегистрировать декларацию.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификаты ИСО (ISO)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Проконсультируем по стандартам ISO и поможем подготовиться к прохождению сертификации системы менеджмента.</p></div></div>
-              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификационные испытания</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button><div class="service-answer"><p>Подберём лабораторию и организуем испытания образцов в соответствии с требованиями к вашей продукции.</p></div></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Свидетельства государственной регистрации (СГР)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Добровольная сертификация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификаты соответствия</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Техническая документация</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Декларации о соответствии</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификаты ИСО (ISO)</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
+              <div class="service-accordion-item"><button class="service-item" type="button" aria-expanded="false"><span>Сертификационные испытания</span><b><img src="assets/icons/plus-white-small.svg" alt="" aria-hidden="true" /></b></button></div>
               <div class="service-accordion-item"><a class="service-item" href="#consultation"><span>Документы для маркетплейсов</span><b><img class="service-arrow-icon" src="assets/icons/arrow-right-blue.svg" alt="" aria-hidden="true" /></b></a></div>
             </div>
           </div>
@@ -367,14 +478,14 @@
         <strong class="review-company">ООО «Старт-Строй»</strong>
         <span class="review-position">Генеральный директор А. В. Поваляев</span>
         <blockquote>Обратилась в эту компанию недавно, когда решила открывать собственный ресторан, "СЕРТЕКС" помог мне получить все необходимые сертификаты для моего бизнеса. Очень благодарна за оперативность, профессионализм и внимательное отношение к клиентам, сотрудники всё внимательно выслушали и провели консультацию по всем вопросам. Всем рекомендую обращаться к ним!</blockquote>
-        <a class="review-more" href="#reviews">Читать полностью <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></a>
+        <button class="review-more" type="button" data-open-review-text>Читать полностью <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></button>
       </article>
       <article class="review-card">
         <div class="review-meta"><div class="stars" aria-label="Оценка 5 из 5">★★★★★</div><time datetime="2021-09-30">30.09.2021</time></div>
         <strong class="review-company">ООО «Форт-Н ХХI»</strong>
         <span class="review-position">Генеральный директор Татьяна Алаева</span>
         <blockquote>Немного представлюсь. Фирма ООО «Форт-Н ХХI» – ведущий . Сертекс - это оперативно. Какие же ваши специалисты умненькие, компетентные, грамотные, оперативные, вежливые!!! Разрешите сказать отдельное спасибо и выразить огромную благодарность эксперту - заюшке Левицкой Елене Игоревне. Елена всегда придет на помощь в любой сложной ситуации.</blockquote>
-        <a class="review-more" href="#reviews"><img class="review-doc-icon" src="assets/icons/document-blue-small.svg" alt="" />Благодарственное письмо <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></a>
+        <button class="review-more" type="button" data-open-review-letter><img class="review-doc-icon" src="assets/icons/document-blue-small.svg" alt="" />Благодарственное письмо <img src="assets/icons/arrow-up-right-dark-grey-small.svg" alt="" /></button>
       </article>
     </div>
     <div class="review-platforms" aria-label="Площадки с отзывами клиентов">
@@ -394,7 +505,7 @@
       <div class="faq-intro-card">
         <h3>Не нашли ответа?</h3>
         <p>Задайте вопрос эксперту или позвоните — поможем разобраться в требованиях к вашей продукции.</p>
-        <button class="button button-primary" type="button" data-open-application>
+        <button class="button button-primary" type="button" data-open-question>
           Задать вопрос
         </button>
         <p class="faq-consult-caption">Консультация по телефону</p>
@@ -626,18 +737,6 @@
   </div>
 </footer>
 
-    <div class="modal" id="search-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
-        <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
-        <h2 id="search-title">Поиск по сайту</h2>
-        <form class="search-form">
-          <input type="search" placeholder="Услуга, документ или отрасль" autofocus />
-          <button class="button button-primary" type="submit">Найти</button>
-        </form>
-      </div>
-    </div>
-
     <div class="modal" id="services-modal" aria-hidden="true">
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="services-title">
@@ -654,31 +753,147 @@
       </div>
     </div>
 
-    <div class="modal" id="application-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="application-title">
-        <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
-        <div class="application-form-wrap">
-          <h2 id="application-title">Получить консультацию</h2>
-          <p>Опишите продукцию — профильный эксперт подскажет, какие документы потребуются.</p>
-          <form class="application-form" data-contact-form>
-            <div class="field-row">
-              <input type="text" name="name" placeholder="Ваше имя" required />
-              <input type="tel" name="phone" placeholder="Телефон" required />
+<div class="modal" id="application-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog application-dialog" role="dialog" aria-modal="true" aria-labelledby="application-title">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
+    <div class="application-form-wrap">
+      <h2 id="application-title">Рассчитать стоимость</h2>
+      <p>Заполните поля ниже и мы свяжемся с Вами в ближайшее время</p>
+      <form class="application-form" data-contact-form>
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <div class="required-input-wrap">
+          <input type="tel" name="phone" placeholder=" " required />
+          <span class="custom-placeholder">Телефон <b>*</b></span>
+        </div>
+        <textarea name="product" placeholder="Какая у вас продукция?" required></textarea>
+        <button class="button button-primary" type="submit">Отправить</button>
+        <label class="consent">
+          <input type="checkbox" name="consent" required />
+          <span>Нажимая кнопку, я даю согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с <a href="#">политикой в отношении персональных данных</a></span>
+        </label>
+      </form>
+    </div>
+    <div class="form-success" hidden>
+      <span>✓</span>
+      <h2>Заявка отправлена</h2>
+      <p>Эксперт свяжется с вами и уточнит детали задачи.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="service-detail-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog service-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="service-detail-title">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
+    <h2 id="service-detail-title">Свидетельства государственной регистрации (СГР)</h2>
+    <ul class="service-sublist" id="service-detail-list"></ul>
+    <a class="button button-primary service-detail-cta" href="#consultation" data-close-modal>
+      Подробнее об услуге <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</div>
+
+<div class="modal" id="question-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog question-dialog" role="dialog" aria-modal="true" aria-labelledby="question-title">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
+
+    <div class="question-form-wrap">
+      <div class="question-layout">
+        <div class="question-main">
+          <h2 id="question-title">Не нашли нужную информацию?</h2>
+          <p class="question-subtitle">
+            Оставьте заявку, и мы разберемся в ваших потребностях, предложим решение в соответствии с вашей задачей!
+          </p>
+
+          <form class="question-form" data-contact-form>
+            <input type="text" name="name" placeholder="Ваше имя" required />
+            <div class="required-input-wrap">
+              <input type="tel" name="phone" placeholder=" " required />
+              <span class="custom-placeholder">Телефон <b>*</b></span>
             </div>
-            <textarea name="product" placeholder="Какая у вас продукция?" required></textarea>
-            <button class="button button-primary button-large" type="submit">
-              Отправить заявку
-            </button>
+            <button class="button button-primary question-submit" type="submit">Отправить</button>
+            <label class="consent question-consent">
+              <input type="checkbox" name="consent" required />
+              <span>Нажимая кнопку, я даю согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с <a href="#">политикой в отношении персональных данных</a></span>
+            </label>
           </form>
         </div>
-        <div class="form-success" hidden>
-          <span>✓</span>
-          <h2>Заявка отправлена</h2>
-          <p>Эксперт свяжется с вами и уточнит детали задачи.</p>
-        </div>
+
+        <aside class="question-expert-card">
+          <img class="question-expert-avatar" src="assets/expert-ivan.webp" alt="Иван Алексеевич" />
+          <div class="question-expert-info">
+            <strong>Иван Алексеевич</strong>
+            <span>специалист Сертекс</span>
+          </div>
+          <div class="question-expert-phone">
+            <small>Или позвоните:</small>
+            <a href="tel:84956443810">8 (495) 644 38 10</a>
+          </div>
+          <div class="question-expert-socials">
+            <a class="q-social-tg" href="#" aria-label="Telegram">
+              <img src="assets/icons/telegram.svg" alt="Telegram" />
+            </a>
+            <a class="q-social-max" href="#" aria-label="Max">
+              <img src="assets/icons/max.svg" alt="Max" />
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
+
+    <div class="form-success" hidden>
+      <span>✓</span>
+      <h2>Вопрос отправлен</h2>
+      <p>Иван Алексеевич свяжется с вами в ближайшее время и ответит на ваш вопрос.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Попап 1: Полный текст отзыва -->
+<div class="modal" id="review-text-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog review-dialog" role="dialog" aria-modal="true" aria-labelledby="review-text-title">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
+    <div class="review-modal-header">
+      <div class="review-meta">
+        <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+        <time datetime="2021-09-30">30.09.2021</time>
+      </div>
+      <h2 class="review-modal-company" id="review-text-title">ООО «Старт-Строй»</h2>
+      <span class="review-modal-position">Генеральный директор А. В. Поваляев</span>
+    </div>
+    <div class="review-modal-body">
+      <p>
+        Обратилась в эту компанию недавно, когда решила открывать собственный ресторан, "СЕРТЕКС" помог мне получить все необходимые сертификаты для моего бизнеса. Очень благодарна за оперативность, профессионализм и внимательное отношение к клиентам, сотрудники всё внимательно выслушали и провели консультацию по всем вопросам. Всем рекомендую обращаться к ним!
+      </p>
+      <p>
+        Обратилась в эту компанию недавно, когда решила открывать собственный ресторан, "СЕРТЕКС" помог мне получить все необходимые сертификаты для моего бизнеса. Очень благодарна за оперативность, профессионализм и внимательное отношение к клиентам, сотрудники всё внимательно выслушали и провели консультацию по всем вопросам. Всем рекомендую обращаться к ним!
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Попап 2: Благодарственное письмо (шапка вёрсткой + скан письма) -->
+<div class="modal" id="review-letter-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog review-dialog review-letter-dialog" role="dialog" aria-modal="true" aria-labelledby="review-letter-title">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>×</button>
+    <div class="review-modal-header">
+      <div class="review-meta">
+        <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+        <time datetime="2021-09-30">30.09.2021</time>
+      </div>
+      <h2 class="review-modal-company" id="review-letter-title">ООО «Форт-Н ХХI»</h2>
+      <span class="review-modal-position">Генеральный директор А. В. Поваляев</span>
+    </div>
+    <div class="review-letter-image">
+      <img src="assets/letter.jpg" alt="Благодарственное письмо от ООО «Форт-Н ХХI»" />
+    </div>
+  </div>
+</div>
+
 
     <script src="scripts/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
