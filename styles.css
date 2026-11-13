@@ -6965,3 +6965,55 @@ body.header-fixed {
     top: 66px;
   }
 }
+
+/* ==========================================================================
+   HERO: вертикальные отступы по макетам
+   ========================================================================== */
+
+/* Большой десктоп: от шапки до H1 и от hero-контента до преимуществ — 113px. */
+@media (min-width: 1201px) {
+  .hero {
+    padding-top: 113px;
+    row-gap: 0;
+  }
+
+  .hero .benefits {
+    margin-top: 113px;
+  }
+}
+
+/* От 1200px и ниже — компактный десктопный ритм. */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .hero {
+    padding-top: 60px;
+    row-gap: 0;
+  }
+
+  .hero .benefits {
+    margin-top: 40px;
+  }
+}
+
+/* Планшет: дополнительно сокращаем вертикальные интервалы. */
+@media (max-width: 900px) and (min-width: 641px) {
+  .hero {
+    padding-top: 48px;
+    row-gap: 0;
+  }
+
+  .hero .benefits {
+    margin-top: 32px;
+  }
+}
+
+/* Мобильные значения остаются компактными, с учётом одноколоночного hero. */
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 32px;
+    row-gap: 0;
+  }
+
+  .hero .benefits {
+    margin-top: 28px;
+  }
+}
