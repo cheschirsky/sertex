@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Отрасли — СЕРТЕКС</title>
+ <meta name="description" content="СЕРТЕКС — сертификация и подтверждение соответствия продукции">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="industries.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+</head>
+<body id="top">
+<header class="site-header">
+  <div class="topbar container">
+    <a class="logo" href="index.html" aria-label="СЕРТЕКС — на главную">
+      <img src="assets/icons/logo.svg" alt="СЕРТЕКС" />
+      <span>Центр по сертификации</span>
+    </a>
+
+    <form class="header-search-form" role="search">
+      <input type="search" name="q" placeholder="Поиск" aria-label="Поиск по сайту" />
+      <button type="submit" aria-label="Найти">
+        <img class="search-icon" src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
+      </button>
+    </form>
+
+    <div class="header-location">
+      <img src="assets/icons/emblem.svg" alt="" />
+      <span>Работаем по всей<br />России и ЕАЭС</span>
+    </div>
+
+    <a class="header-email" href="mailto:info@sertex.org">
+      <img src="assets/icons/envelope-blue.svg" alt="" aria-hidden="true" />info@sertex.org
+    </a>
+
+    <div class="header-phones">
+      <a href="tel:88007076612">8 (800) 707 66 12</a>
+      <a href="tel:84956443810">8 (495) 644 38 10</a>
+    </div>
+
+    <button class="button button-outline header-cta" type="button" data-open-application>
+      Оставить заявку
+    </button>
+
+    <div class="mobile-header-actions">
+      <button class="mobile-phone-btn" type="button" aria-label="Заказать звонок" data-open-application>
+        <img src="assets/icons/phone-blue-small.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="mobile-menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="menu-btn-label">Меню</span>
+        <span class="menu-btn-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn-close" aria-hidden="true">×</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Десктопная навигация -->
+  <nav class="main-nav" aria-label="Основная навигация">
+    <div class="container nav-inner">
+      <div class="nav-mega-trigger" data-mega="services">
+        <a class="button services-button" href="index.html#services">
+          <img class="menu-icon" src="assets/icons/menu-blue-small.svg" alt="" aria-hidden="true" />
+          Все услуги
+        </a>
+      </div>
+
+      <div class="nav-mega-trigger" data-mega="industries">
+        <a class="nav-pill" href="industries.html">Отрасли</a>
+      </div>
+
+      <div class="nav-links">
+      <a class="nav-hide-fixed" href="index.html#services">Сертификаты</a>
+      <a class="nav-hide-fixed" href="index.html#services">Декларации</a>
+      <a class="nav-hide-fixed" href="index.html#services">СГР</a>
+      <a href="index.html#services">Маркетплейсам</a>
+      <a href="index.html#process">Испытания</a>
+      <div class="nav-dropdown">
+      <a href="index.html#about" class="nav-dropdown-toggle">О компании</a>
+      <div class="nav-dropdown-card">
+        <a href="index.html#about">О центре</a>
+        <a href="experts.html">Эксперты</a>
+        <a href="index.html#articles">Блог</a>
+        <a href="index.html#articles">Новости</a>
+      </div>
+      </div>
+      <a href="index.html#consultation">Цены</a>
+      <a href="index.html#footer">Контакты</a>
+    </div>
+
+    <!-- Правая часть для фиксированной шапки -->
+    <div class="nav-fixed-actions">
+      <a class="nav-fixed-phone" href="tel:88007076612">8 (800) 707 66 12</a>
+      <button class="button button-outline nav-fixed-cta" type="button" data-open-application>
+      Оставить заявку
+      </button>
+      <button class="mobile-menu-button nav-fixed-burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <span class="menu-btn-label">Меню</span>
+      <span class="menu-btn-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="menu-btn-close" aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    </div>
+
+    <!-- Выпадающее мега-меню для десктопа -->
+    <div class="mega-menus-wrap">
+      <div class="mega-panel" id="mega-services" aria-hidden="true">
+        <div class="container mega-services-grid">
+          <ul class="mega-services-cats" id="desktop-service-cats"></ul>
+          <div class="mega-services-sub" id="desktop-service-sub"></div>
+          <button class="mega-close" type="button" aria-label="Закрыть меню">×</button>
+        </div>
+      </div>
+
+      <div class="mega-panel" id="mega-industries" aria-hidden="true">
+        <div class="container mega-industries-wrap">
+          <ul class="mega-industries-list" id="desktop-industries-list"></ul>
+          <button class="mega-close" type="button" aria-label="Закрыть меню">×</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Полноэкранное мобильное синее меню (3 уровня) -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <form class="mobile-search-form" role="search">
+        <input type="search" name="q" placeholder="Поиск" aria-label="Поиск по сайту" />
+        <button type="submit" aria-label="Найти">
+          <img src="assets/icons/search-grey.svg" alt="" aria-hidden="true" />
+        </button>
+      </form>
+
+      <!-- Уровень 1 -->
+      <div class="mobile-level active" data-level="root">
+        <ul class="mobile-nav-list">
+          <li><button type="button" data-go="services"><span class="m-icon-lines"></span>Все услуги<i class="m-arr">→</i></button></li>
+          <li><button type="button" data-go="industries">Отрасли<i class="m-arr">→</i></button></li>
+          <li><a href="index.html#services" data-close-drawer>Маркетплейсам</a></li>
+          <li><a href="index.html#process" data-close-drawer>Испытания</a></li>
+          <li><button type="button" data-go="about">О компании<i class="m-arr">→</i></button></li>
+          <li><a href="index.html#footer" data-close-drawer>Контакты</a></li>
+        </ul>
+      </div>
+
+      <!-- Уровень 2: Услуги -->
+      <div class="mobile-level" data-level="services" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ Все услуги</span></button>
+        <ul class="mobile-nav-list" id="mobile-service-cats"></ul>
+      </div>
+
+      <!-- Уровень 3: Подуслуги -->
+      <div class="mobile-level" data-level="service-sub" hidden>
+        <button class="mobile-back" type="button" data-back="services">← <span id="mobile-sub-title">/ Услуги</span></button>
+        <ul class="mobile-sub-list" id="mobile-service-sub"></ul>
+      </div>
+
+      <!-- Уровень 2: Отрасли -->
+      <div class="mobile-level" data-level="industries" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ Отрасли</span></button>
+        <ul class="mobile-sub-list" id="mobile-industries-list"></ul>
+      </div>
+
+      <!-- Уровень 2: О компании -->
+      <div class="mobile-level" data-level="about" hidden>
+        <button class="mobile-back" type="button" data-back="root">← <span>/ О компании</span></button>
+        <ul class="mobile-nav-list">
+          <li><a href="index.html#about" data-close-drawer>О центре</a></li>
+          <li><a href="experts.html" data-close-drawer>Эксперты</a></li>
+          <li><a href="index.html#articles" data-close-drawer>Блог</a></li>
+          <li><a href="index.html#articles" data-close-drawer>Новости</a></li>
+        </ul>
+      </div>
+
+      <button class="button button-light mobile-drawer-cta" type="button" data-open-application data-close-drawer>
+        Оставить заявку
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="industries-page">
+ <section class="section industries-page-section">
+  <div class="container">
+   <div class="section-heading">
+    <h1>Отрасли</h1>
+    <p>Подбираем документы, испытания и подтверждение соответствия с учётом особенностей вашей продукции</p>
+   </div>
+   <div class="industries-page-grid"><a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-food.webp" alt="" loading="lazy"><span>Пищевая продукция</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-cosmetics.webp" alt="" loading="lazy"><span>Косметика и парфюмерия</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-chemistry.webp" alt="" loading="lazy"><span>Химическая продукция</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-paper.webp" alt="" loading="lazy"><span>Упаковка</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-textile.webp" alt="" loading="lazy"><span>Лёгкая промышленность</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-electronics.webp" alt="" loading="lazy"><span>Электроника</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-toys.webp" alt="" loading="lazy"><span>Игрушки</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-baby.webp" alt="" loading="lazy"><span>Детские товары</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-machines.webp" alt="" loading="lazy"><span>Машины и оборудование</span></a>
+<a class="industry-card" href="index.html#consultation"><img src="assets/industry/industry-oil.webp" alt="" loading="lazy"><span>Смазочные материалы</span></a></div>
+  </div>
+ </section>
+</main>
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Услуги</h4>
+        <a href="index.html#services">Свидетельства государственной регистрации (СГР)</a>
+        <a href="index.html#services">Добровольная сертификация</a>
+        <a href="index.html#services">Сертификаты соответствия</a>
+        <a href="index.html#services">Декларации о соответствии</a>
+        <a href="index.html#services">Сертификаты ИСО (ISO)</a>
+        <a href="index.html#services">Сертификационные испытания</a>
+        <a class="footer-more-link" href="index.html#services">Все услуги ↗</a>
+      </div>
+      <div>
+        <h4>Отрасли</h4>
+        <a href="industries.html">Пищевая продукция</a>
+        <a href="industries.html">Косметика и парфюмерия</a>
+        <a href="industries.html">Химическая продукция</a>
+        <a href="industries.html">Упаковка</a>
+        <a href="industries.html">Лёгкая промышленность</a>
+        <a href="industries.html">Электроника</a>
+        <a href="industries.html">Игрушки</a>
+        <a class="footer-more-link" href="industries.html">Все отрасли ↗</a>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <a href="index.html#about">О компании</a>
+        <a href="experts.html">Эксперты</a>
+        <a href="index.html#consultation">Цены</a>
+        <a href="index.html#reviews">Отзывы</a>
+        <a href="index.html#articles">Блог</a>
+        <a href="index.html#articles">Новости</a>
+        <a href="index.html#footer-contacts">Контакты</a>
+      </div>
+      <div class="footer-contacts" id="footer-contacts">
+        <img class="footer-logo" src="assets/icons/logo.svg" alt="СЕРТЕКС" />
+        <span class="footer-phone-note">Звонок бесплатный из России</span>
+        <a class="footer-phone" href="tel:88007076612">8 (800) 707-66-12</a>
+        <button class="button footer-cta-btn" type="button" data-open-application>Связаться</button>
+        <a class="footer-mail" href="mailto:info@sertex.org"><img src="assets/icons/envelope-blue.svg" alt="" />info@sertex.org</a>
+        <p class="footer-address">123060, г. Москва, ул. Маршала<br />Рыбалко, д. 2, корп. 9</p>
+        <a class="footer-map-link" href="index.html#footer">Показать на карте</a>
+        <div class="socials" aria-label="Социальные сети">
+          <a class="social-dzen" href="#" aria-label="Дзен"><img src="assets/icons/dzen.svg" alt="" /></a>
+          <a class="social-vk" href="#" aria-label="ВКонтакте"><img src="assets/icons/vk.svg" alt="" /></a>
+          <a class="social-wa" href="#" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="" /></a>
+          <a class="social-tg" href="#" aria-label="Telegram"><img src="assets/icons/tg.svg" alt="" /></a>
+          <a class="social-max" href="#" aria-label="Max"><img src="assets/icons/max.svg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 ООО «СЕРТЕКС». Все права защищены.</p>
+      <div class="footer-legal">
+        <a href="#">Политика конфиденциальности ↗</a>
+        <span>•</span>
+        <a href="#">Согласие на обработку персональных данных ↗</a>
+        <span>•</span>
+        <a href="#">Политика обработки cookie ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="scripts/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
