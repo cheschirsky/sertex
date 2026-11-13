@@ -5896,3 +5896,228 @@ button.review-more {
   #mega-services .mega-services-grid { grid-template-columns: 1fr; }
   #mega-services .mega-services-sub { padding: 18px 16px; }
 }
+
+
+/* ==========================================================================
+   Корректировки главной страницы по макету
+   ========================================================================== */
+
+/* Нижний CTA визуально переходит в подвал: общий тёмный фон без зазора. */
+.bottom-cta {
+  margin: 0;
+  padding-block: 44px 0;
+  background: #082b4d;
+}
+
+.bottom-cta-box {
+  border-radius: 36px 36px 0 0;
+}
+
+.site-footer {
+  border-radius: 0;
+}
+
+/* Блок «От вашей заявки до готовых документов» — единая скруглённая секция. */
+.process-section {
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+/* Блок о СЕРТЕКС — белая секция: заголовок слева, карта справа с самого верха. */
+.about-section {
+  margin-bottom: 0;
+  border-radius: 0;
+  background: #fff;
+  color: var(--navy);
+}
+
+.about-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.about-intro {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 100%;
+}
+
+.about-intro h2 {
+  color: var(--navy);
+}
+
+.about-intro > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.about-map {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  align-self: start;
+}
+
+.about-media {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.about-section .stats {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.about-section .stats div {
+  border-color: #dce4ef;
+}
+
+.about-section .stats strong {
+  color: var(--navy);
+}
+
+.about-section .stats span {
+  color: var(--muted);
+}
+
+.about-section .partner-labs-inner {
+  grid-column: 1 / -1;
+}
+
+.about-section .partner-labs-inner h3 {
+  color: var(--navy);
+}
+
+.about-section .partner-lab-card {
+  background: #f2f6fb;
+}
+
+.about-section .partner-lab-card > span {
+  color: var(--navy);
+}
+
+/* Отзывы занимают всю ширину окна, как секция «Материалы». */
+.reviews-section {
+  width: 100%;
+  margin-inline: 0;
+}
+
+/* Мега-меню: аккуратная стрелка появляется слева только при наведении. */
+.mega-sub-link,
+.mega-industries-list a {
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.mega-sub-link::before,
+.mega-industries-list a::before {
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: url("assets/icons/arrow-double-down-blue.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 160ms ease;
+}
+
+.mega-sub-link:hover::before,
+.mega-industries-list a:hover::before {
+  opacity: 1;
+}
+
+.mega-industries-list {
+  gap: 28px 48px;
+}
+
+.mega-industries-list a {
+  padding-block: 0;
+}
+
+/* Убираем декоративный знак у пункта «О компании». */
+.nav-links a[href="#about"]::after {
+  display: none;
+}
+
+/* Фото экспертов фиксированы, а карточки растягиваются по самой высокой. */
+.expert-slider .slick-track {
+  align-items: stretch;
+}
+
+.expert-slider .slick-slide {
+  display: flex;
+  height: auto;
+}
+
+.expert-slider .slick-slide > div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.expert-card {
+  height: auto;
+  min-height: 100%;
+}
+
+@media (min-width: 821px) {
+  .expert-photo {
+    width: 262px;
+    max-width: 100%;
+    height: 262px;
+    flex: 0 0 262px;
+    align-self: center;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 820px) {
+  .about-section {
+    border-radius: 0;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .about-intro,
+  .about-map,
+  .about-media,
+  .about-section .stats,
+  .about-section .partner-labs-inner {
+    width: 100%;
+    max-width: 100%;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .about-map {
+    min-height: 0;
+    margin-block: 0;
+  }
+
+  .process-section {
+    border-radius: 28px;
+  }
+
+  .bottom-cta {
+    padding-top: 32px;
+  }
+
+  .bottom-cta-box {
+    border-radius: 26px 26px 0 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .bottom-cta {
+    padding-top: 24px;
+  }
+
+  .bottom-cta-box {
+    border-radius: 22px 22px 0 0;
+  }
+}
