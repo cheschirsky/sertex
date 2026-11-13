@@ -7066,3 +7066,64 @@ body.header-fixed {
     display: none !important;
   }
 }
+
+
+/* Ноутбук 901–1100px: в фиксированной строке две компактные кнопки слева,
+   справа — телефон, заявка и меню. Не растягиваем кнопки на всю ширину. */
+@media (max-width: 1100px) and (min-width: 901px) {
+  .site-header.is-fixed .main-nav {
+    display: block !important;
+  }
+
+  .site-header.is-fixed .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .site-header.is-fixed .nav-mega-trigger {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: 66px;
+    align-items: center;
+  }
+
+  .site-header.is-fixed .services-button,
+  .site-header.is-fixed .nav-pill {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    white-space: nowrap;
+  }
+
+  .site-header.is-fixed .nav-links {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-left: auto !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-phone,
+  .site-header.is-fixed .nav-fixed-cta {
+    display: inline-flex !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-burger {
+    display: inline-flex !important;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    display: flex;
+    top: 78px;
+  }
+}
