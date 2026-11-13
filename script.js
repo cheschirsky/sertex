@@ -396,7 +396,7 @@ $(function () {
     }
   });
 
-  // Slick carousel for five expert cards; cards remain available if the CDN is unavailable.
+  // Slick carousel for six expert cards; cards remain available if the CDN is unavailable.
   if ($.fn.slick && $(".expert-slider").length) {
     $(".expert-slider").slick({
       slidesToShow: 4,
