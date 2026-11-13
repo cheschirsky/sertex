@@ -6847,3 +6847,23 @@ button.review-more {
 body.header-fixed {
   padding-top: 0 !important;
 }
+
+
+/* Исправление наследования базовых стилей span внутри кнопки меню. */
+.mobile-menu-button .menu-btn-label,
+.mobile-menu-button .menu-btn-close {
+  width: auto;
+  height: auto;
+  background: transparent;
+}
+
+.mobile-menu-button .menu-btn-label {
+  display: inline;
+  white-space: nowrap;
+}
+
+.mobile-menu-button .menu-btn-burger {
+  width: 17px;
+  height: 11px;
+  background: transparent;
+}
