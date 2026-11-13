@@ -6958,3 +6958,10 @@ body.header-fixed {
 .mobile-phone-btn img {
   transform: rotate(-90deg);
 }
+
+
+@media (max-width: 1199px) and (min-width: 901px) {
+  .site-header:not(.is-fixed) .mobile-drawer {
+    top: 66px;
+  }
+}
