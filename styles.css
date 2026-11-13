@@ -6245,3 +6245,31 @@ button.review-more {
     border-radius: 22px;
   }
 }
+
+
+/* Социальные SVG уже содержат собственный фон: не добавляем подложки ссылкам. */
+.site-footer .socials a,
+.site-footer .socials a.social-dzen,
+.site-footer .socials a.social-vk,
+.site-footer .socials a.social-wa,
+.site-footer .socials a.social-max,
+.site-footer .socials a.social-tg {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+.site-footer .socials a::before,
+.site-footer .socials a::after {
+  display: none !important;
+  content: none !important;
+}
+
+.site-footer .socials img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
