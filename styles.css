@@ -7017,3 +7017,52 @@ body.header-fixed {
     margin-top: 28px;
   }
 }
+
+
+/* DESKTOP NAVIGATION SAFEGUARD: from 1101px keep the full header.
+   This explicitly cancels compact-menu rules for both normal and fixed states. */
+@media (min-width: 1101px) {
+  .site-header .topbar .mobile-header-actions {
+    display: none !important;
+  }
+
+  .site-header .main-nav .nav-mega-trigger {
+    display: inline-flex !important;
+  }
+
+  .site-header .main-nav .nav-links {
+    display: flex !important;
+  }
+
+  .site-header .main-nav .nav-fixed-actions {
+    display: none !important;
+  }
+
+  .site-header .main-nav .nav-fixed-burger {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .main-nav .nav-mega-trigger {
+    display: inline-flex !important;
+  }
+
+  .site-header.is-fixed .main-nav .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .site-header.is-fixed .main-nav .nav-fixed-actions {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .site-header.is-fixed .main-nav .nav-fixed-phone,
+  .site-header.is-fixed .main-nav .nav-fixed-cta {
+    display: inline-flex !important;
+  }
+
+  .site-header.is-fixed .main-nav .nav-fixed-burger {
+    display: none !important;
+  }
+}
