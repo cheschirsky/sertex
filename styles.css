@@ -6867,3 +6867,94 @@ body.header-fixed {
   height: 11px;
   background: transparent;
 }
+
+/* ==========================================================================
+   ШАПКА: ранний переход меню на компактный режим
+   ========================================================================== */
+
+/* До 1200px горизонтальная навигация уже не помещается стабильно:
+   заменяем её одной кнопкой меню вместо появления полос прокрутки. */
+@media (max-width: 1199px) and (min-width: 901px) {
+  .main-nav .nav-links {
+    display: none !important;
+    overflow: visible;
+  }
+
+  .main-nav .nav-mega-trigger {
+    display: none !important;
+  }
+
+  .main-nav .nav-fixed-actions {
+    display: flex !important;
+    gap: 0;
+    margin-left: auto;
+  }
+
+  .main-nav .nav-fixed-phone,
+  .main-nav .nav-fixed-cta {
+    display: none !important;
+  }
+
+  .main-nav .nav-fixed-burger {
+    display: inline-flex !important;
+  }
+
+  .site-header .mobile-drawer {
+    top: 78px;
+  }
+}
+
+/* На планшете в фиксированной строке оставляем только меню.
+   Кнопки «Все услуги» и «Отрасли» там дублируют пункты выпадающего меню. */
+@media (max-width: 900px) and (min-width: 641px) {
+  .site-header.is-fixed .main-nav {
+    display: block !important;
+  }
+
+  .site-header.is-fixed .nav-inner {
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .site-header.is-fixed .nav-mega-trigger,
+  .site-header.is-fixed .nav-links {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex !important;
+    margin-left: auto;
+  }
+
+  .site-header.is-fixed .nav-fixed-phone,
+  .site-header.is-fixed .nav-fixed-cta {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-burger {
+    display: inline-flex !important;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    top: 78px;
+  }
+}
+
+/* Крестик показывается только в открытом состоянии кнопки меню.
+   Правило действует и для обычной, и для фиксированной кнопки. */
+.mobile-menu-button .menu-btn-close {
+  display: none !important;
+}
+
+.mobile-menu-button.open .menu-btn-burger {
+  display: none !important;
+}
+
+.mobile-menu-button.open .menu-btn-close {
+  display: inline !important;
+}
+
+/* Иконка телефона в мобильной шапке развёрнута по макету. */
+.mobile-phone-btn img {
+  transform: rotate(-90deg);
+}
