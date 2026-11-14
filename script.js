@@ -53,9 +53,14 @@ $(function () {
   });
 
   $(document).on("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeAllModals();
+    if (event.key !== "Escape") return;
+
+    if ($("#mobile-drawer").hasClass("open")) {
+      setDrawerOpen(false);
+      return;
     }
+
+    closeAllModals();
   });
 
   $(".modal-services a").on("click", function () {
@@ -195,7 +200,9 @@ $(function () {
     }, 3000);
   });
 
-  // ---------------------------------------------------------------------------\n  // Данные и построение десктопного и мобильного меню\n  // ---------------------------------------------------------------------------\n  // Структура данных с сокращенным числом подуслуг (по 2 на каждую услугу) и 8 отраслями
+  // ---------------------------------------------------------------------------
+  // Данные и построение десктопного и мобильного меню
+  // ---------------------------------------------------------------------------
   const megaMenuData = {
     services: [
       {
@@ -274,18 +281,20 @@ $(function () {
     ]
   };
 
-  // Отрисовка пунктов меню аналогична оригинальной логике для обновленного набора данных
   const $deskCats = $("#desktop-service-cats");
   const $deskSub = $("#desktop-service-sub");
   const $mobCats = $("#mobile-service-cats");
+  const $deskIndustries = $("#desktop-industries-list");
+  const $mobIndustries = $("#mobile-industries-list");
 
-  megaMenuData.services.forEach(function (cat, idx) {
+  // Заполняем обе версии меню из одного набора данных.
+  megaMenuData.services.forEach(function (category, index) {
     $deskCats.append(
-      '<li><a href="' + cat.url + '" data-cat-idx="' + idx + '"' +
-      (idx === 0 ? ' class="active"' : "") + ">" + cat.title + "</a></li>"
+      '<li><a href="' + category.url + '" data-cat-idx="' + index + '"' +
+      (index === 0 ? ' class="active"' : "") + ">" + category.title + "</a></li>"
     );
 
-    const subHtml = cat.items
+    const subItems = category.items
       .flatMap(function (item) {
         return [item.title].concat(item.children || []).map(function (title) {
           return '<a class="mega-sub-link" href="' + item.url + '">' + title + "</a>";
@@ -293,33 +302,53 @@ $(function () {
       })
       .join("");
 
-    $deskSub.append('<div class="mega-sub-pane' + (idx === 0 ? " active" : "") + '" data-pane-idx="' + idx + '">' + subHtml + "</div>");
-    $mobCats.append('<li><button type="button" data-open-sub="' + idx + '">' + cat.title + '<i class="m-arr">→</i></button></li>');
+    $deskSub.append(
+      '<div class="mega-sub-pane' + (index === 0 ? " active" : "") +
+      '" data-pane-idx="' + index + '">' + subItems + "</div>"
+    );
+
+    $mobCats.append(
+      '<li><button type="button" data-open-sub="' + index + '">' +
+      category.title + '<i class="m-arr">→</i></button></li>'
+    );
   });
 
-  megaMenuData.industries.forEach(function (ind) {
-    $("#desktop-industries-list").append('<li><a href="' + ind.url + '">' + ind.title + "</a></li>");
-    $("#mobile-industries-list").append('<li><a href="' + ind.url + '" data-close-drawer>' + ind.title + "</a></li>");
+  megaMenuData.industries.forEach(function (industry) {
+    $deskIndustries.append(
+      '<li><a href="' + industry.url + '">' + industry.title + "</a></li>"
+    );
+    $mobIndustries.append(
+      '<li><a href="' + industry.url + '" data-close-drawer>' +
+      industry.title + "</a></li>"
+    );
   });
 
-  // ---------------------------------------------------------------------------\n  // Поведение навигации и мобильного меню\n  // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // Поведение десктопного мега-меню
+  // ---------------------------------------------------------------------------
   let closeMegaTimer = null;
+
   function showMega(name) {
     window.clearTimeout(closeMegaTimer);
     $(".mega-panel").removeClass("visible").attr("aria-hidden", "true");
     $(".nav-mega-trigger").removeClass("active");
-    if (name) {
-      $("#mega-" + name).addClass("visible").attr("aria-hidden", "false");
-      $('.nav-mega-trigger[data-mega="' + name + '"]').addClass("active");
-    }
+
+    if (!name) return;
+
+    $("#mega-" + name).addClass("visible").attr("aria-hidden", "false");
+    $('.nav-mega-trigger[data-mega="' + name + '"]').addClass("active");
   }
 
   $(".nav-mega-trigger").on("mouseenter", function () {
-    showMega($(this).data("mega"));
+    if (window.innerWidth > 1100) {
+      showMega($(this).data("mega"));
+    }
   });
 
   $(".main-nav").on("mouseleave", function () {
-    closeMegaTimer = window.setTimeout(function () { showMega(null); }, 180);
+    closeMegaTimer = window.setTimeout(function () {
+      showMega(null);
+    }, 180);
   });
 
   $(".mega-menus-wrap").on("mouseenter", function () {
@@ -331,53 +360,108 @@ $(function () {
   });
 
   $(document).on("mouseenter", "#desktop-service-cats a", function () {
-    const idx = $(this).data("cat-idx");
+    const index = $(this).data("cat-idx");
     $("#desktop-service-cats a").removeClass("active");
     $(this).addClass("active");
     $(".mega-sub-pane").removeClass("active");
-    $('.mega-sub-pane[data-pane-idx="' + idx + '"]').addClass("active");
+    $('.mega-sub-pane[data-pane-idx="' + index + '"]').addClass("active");
   });
 
-  const $mobBtn = $(".mobile-menu-button");
+  // ---------------------------------------------------------------------------
+  // Единое мобильное меню для верхней и фиксированной кнопок
+  // ---------------------------------------------------------------------------
+  const $menuButtons = $(".mobile-menu-button");
   const $drawer = $("#mobile-drawer");
 
+  function showDrawerLevel(level) {
+    $(".mobile-level")
+      .prop("hidden", true)
+      .removeClass("active");
+
+    $('.mobile-level[data-level="' + level + '"]')
+      .prop("hidden", false)
+      .addClass("active");
+  }
+
   function setDrawerOpen(open) {
-    $mobBtn.toggleClass("open", open).attr("aria-expanded", String(open));
-    $drawer.toggleClass("open", open).attr("aria-hidden", String(!open));
-    $("body").toggleClass("modal-open", open);
+    $menuButtons
+      .toggleClass("open", open)
+      .attr("aria-expanded", String(open));
+
+    $drawer
+      .toggleClass("open", open)
+      .attr("aria-hidden", String(!open));
+
+    $body.toggleClass("drawer-open", open);
+
     if (!open) {
-      $(".mobile-level").prop("hidden", true).removeClass("active");
-      $('.mobile-level[data-level="root"]').prop("hidden", false).addClass("active");
+      showDrawerLevel("root");
     }
   }
 
+  // Переключение уровней меню.
   $(document).on("click", "[data-go], [data-back]", function () {
-    const target = $(this).data("go") || $(this).data("back");
-    $(".mobile-level").prop("hidden", true).removeClass("active");
-    $('.mobile-level[data-level="' + target + '"]').prop("hidden", false).addClass("active");
+    const level = $(this).data("go") || $(this).data("back");
+    showDrawerLevel(level);
   });
 
+  // Открытие подуслуг выбранной категории.
   $(document).on("click", "[data-open-sub]", function () {
-    const cat = megaMenuData.services[$(this).data("open-sub")];
-    if (!cat) return;
+    const category = megaMenuData.services[$(this).data("open-sub")];
+    if (!category) return;
 
-    $("#mobile-sub-title").text("/ " + cat.short);
-    const itemsHtml = cat.items
+    $("#mobile-sub-title").text("/ " + category.short);
+
+    const itemsHtml = category.items
       .flatMap(function (item) {
         return [item.title].concat(item.children || []).map(function (title) {
-          return '<li><a href="' + item.url + '" data-close-drawer>' + title + "</a></li>";
+          return '<li><a href="' + item.url + '" data-close-drawer>' +
+            title + "</a></li>";
         });
       })
       .join("");
 
     $("#mobile-service-sub").html(itemsHtml);
-    $(".mobile-level").prop("hidden", true).removeClass("active");
-    $('.mobile-level[data-level="service-sub"]').prop("hidden", false).addClass("active");
+    showDrawerLevel("service-sub");
   });
 
   $(document).on("click", "[data-close-drawer]", function () {
     setDrawerOpen(false);
   });
+
+  // Обе кнопки «Меню» управляют одним и тем же drawer.
+  $menuButtons.on("click", function () {
+    const willOpen = !$drawer.hasClass("open");
+
+    if (willOpen) {
+      showMega(null);
+    }
+
+    setDrawerOpen(willOpen);
+  });
+
+  // В компактной шапке кнопки «Все услуги» и «Отрасли» открывают
+  // соответствующий уровень общего мобильного меню.
+  $(document).on(
+    "click",
+    '.nav-mega-trigger[data-mega="services"] .services-button, ' +
+    '.nav-mega-trigger[data-mega="industries"] .nav-pill',
+    function (event) {
+      if (window.innerWidth > 1100) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const level = $(this).closest(".nav-mega-trigger").data("mega");
+      showMega(null);
+
+      if (!$drawer.hasClass("open")) {
+        setDrawerOpen(true);
+      }
+
+      showDrawerLevel(level);
+    }
+  );
 
   // ---------------------------------------------------------------------------\n  // Дополнительные категории экспертов и слайдер\n  // ---------------------------------------------------------------------------\n  // Expand and collapse the additional expert specialties.
   $(document).on("click", ".expert-more", function () {
@@ -452,73 +536,37 @@ $(function () {
   });
 
   
-    const $header = $(".site-header");
+  const $header = $(".site-header");
   const $topbar = $header.find(".topbar");
   const $mainNav = $header.find(".main-nav");
 
-  function handleFixedHeader() {
-    const scrollTop = $(window).scrollTop();
+  function updateFixedHeader() {
     const isMobile = window.innerWidth <= 640;
-    const triggerOffset = isMobile ? 20 : ($topbar.outerHeight() || 80);
-    const shouldFix = scrollTop > triggerOffset;
+    const scrollTop = $(window).scrollTop();
+    const triggerPoint = isMobile ? 20 : ($topbar.outerHeight() || 78);
+    const shouldFix = scrollTop > triggerPoint;
 
-    if (shouldFix) {
-      const fixedHeight = isMobile
-        ? ($topbar.outerHeight() || 70)
-        : ($mainNav.outerHeight() || 74);
-
-      document.documentElement.style.setProperty("--fixed-header-offset", fixedHeight + "px");
-      $header.addClass("is-fixed");
-      $body.addClass("header-fixed");
-    } else {
+    if (!shouldFix) {
       document.documentElement.style.setProperty("--fixed-header-offset", "0px");
       $header.removeClass("is-fixed");
       $body.removeClass("header-fixed");
+      return;
     }
+
+    const fixedHeight = isMobile
+      ? ($topbar.outerHeight() || 70)
+      : ($mainNav.outerHeight() || 68);
+
+    document.documentElement.style.setProperty(
+      "--fixed-header-offset",
+      fixedHeight + "px"
+    );
+    $header.addClass("is-fixed");
+    $body.addClass("header-fixed");
   }
 
-  $(window).on("scroll resize", handleFixedHeader);
-  handleFixedHeader();
-
-  // Открытие полноэкранного меню по клику на любую кнопку .mobile-menu-button (включая фиксированную)
-  $(document).off("click", ".mobile-menu-button").on("click", ".mobile-menu-button", function () {
-    const willOpen = !$("#mobile-drawer").hasClass("open");
-    if (willOpen) {
-      showMega(null);
-    }
-    setDrawerOpen(willOpen);
-  });
-
-  // Перехват кликов по «Все услуги» и «Отрасли» в режиме компактной шапки (<= 1100px)
-  $(document).on("click", '.nav-mega-trigger[data-mega="services"] .services-button, .nav-mega-trigger[data-mega="industries"] .nav-pill', function (e) {
-    if (window.innerWidth > 1100) {
-      return; // На десктопе > 1100px работает стандартное мега-меню
-    }
-
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    const targetKey = $(this).closest(".nav-mega-trigger").data("mega"); // "services" или "industries"
-    const $drawer = $("#mobile-drawer");
-
-    // Закрываем десктопное мега-меню, если оно было открыто
-    showMega(null);
-
-    // Открываем мобильный дровер, если он закрыт
-    if (!$drawer.hasClass("open")) {
-      setDrawerOpen(true);
-    }
-
-    // Сразу переключаем экран мобильного меню на нужный уровень (data-level="services" или "industries")
-    const $targetLevel = $('.mobile-level[data-level="' + targetKey + '"]');
-    if ($targetLevel.length) {
-      $(".mobile-level").prop("hidden", true).removeClass("active");
-      $targetLevel.prop("hidden", false).addClass("active");
-    } else {
-      $drawer.find('[data-go="' + targetKey + '"]').first().trigger("click");
-    }
-  });
-
+  $(window).on("scroll resize", updateFixedHeader);
+  updateFixedHeader();
 
 
 
