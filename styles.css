@@ -5584,7 +5584,7 @@ button.review-more {
 
   #mega-services .mega-services-sub {
     min-width: 0;
-    padding: 22px 34px 22px 38px;
+    padding: 40px 34px 22px 0;
     background: #f2f4f7;
   }
 
@@ -5599,7 +5599,7 @@ button.review-more {
 
 
   #mega-services .mega-services-sub {
-  padding-top: 28px;
+  padding-top: 40px;
 }
 
 #mega-services .mega-sub-pane {
