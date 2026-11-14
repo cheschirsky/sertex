@@ -3584,66 +3584,6 @@ button.review-more {
     aspect-ratio: 1.78;
   }
 
-  /* Синяя внешняя панель и две внутренние карточки формы. */
-  .bottom-cta {
-    width: min(1420px, calc(100% - 32px));
-    margin: 0 auto;
-    border-radius: 40px;
-    padding-block: 40px 56px;
-    background: var(--blue);
-  }
-
-  .bottom-cta-box {
-    display: grid;
-    width: min(1340px, calc(100% - 48px));
-    max-width: 1340px;
-    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.85fr);
-    align-items: stretch;
-    gap: 24px;
-    border-radius: 0;
-    padding: 0;
-    background: transparent;
-  }
-
-  .bottom-cta-form-col {
-    border-radius: 18px;
-    padding: 34px 38px;
-    background: var(--white);
-  }
-
-  .bottom-cta h2 {
-    margin-bottom: 24px;
-    font-size: 34px;
-  }
-
-  .bottom-form {
-    gap: 12px;
-  }
-
-  .bottom-form input:not([type="checkbox"]) {
-    height: 52px;
-  }
-
-  .bottom-form button.full {
-    min-height: 52px;
-  }
-
-  .consult-card {
-    border-radius: 18px;
-    padding: 28px 26px;
-    background: #f2f6fb;
-  }
-
-  .consult-card h3 {
-    margin-bottom: 18px;
-    font-size: 19px;
-  }
-
-  .consult-card ul {
-    gap: 14px;
-    margin-bottom: 24px;
-    font-size: 14px;
-  }
 }
 
 
@@ -5830,12 +5770,6 @@ button.review-more {
   color: #fff;
 }
 
-.bottom-cta-box {
-  border-radius: 0;
-  padding: 0;
-  background: transparent;
-}
-
 .bottom-cta h2 {
   color: #fff;
 }
@@ -7065,9 +6999,7 @@ body.header-fixed {
 }
 
 
-/* Нижняя CTA-форма: финальное выравнивание по макету.
-   Десктоп: белая карточка формы слева, отдельная светлая карточка эксперта справа.
-   На узких экранах обе части переходят в общую белую карточку. */
+/* Нижняя CTA-форма: единая белая карточка и серая панель консультации на десктопе. */
 @media (min-width: 901px) {
   .bottom-cta-box {
     display: grid;
