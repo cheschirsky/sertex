@@ -2119,10 +2119,12 @@ textarea:focus-visible {
 
 .faq-intro-card {
   display: flex;
+  width: 410px;
+  max-width: 100%;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 20px;
-  padding: 36px 32px;
+  padding: 40px;
   background: var(--white);
 }
 
