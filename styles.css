@@ -765,7 +765,7 @@ textarea:focus-visible {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
   align-items: center;
   gap: 32px;
   padding-block: 48px 56px;
