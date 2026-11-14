@@ -5487,10 +5487,6 @@ button.review-more {
   display: grid;
 }
 
-.mega-sub-link::after {
-  display: none !important;
-}
-
 .mega-sub-children,
 .mobile-sub-nested {
   display: none !important;
