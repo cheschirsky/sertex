@@ -7074,19 +7074,19 @@ body.header-fixed {
     grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.85fr);
     align-items: stretch;
     gap: 24px;
-    border-radius: 0;
-    padding: 0;
-    background: transparent;
-  }
-
-  .bottom-cta-form-col {
     border-radius: 18px;
     padding: 34px 38px;
     background: var(--white);
   }
 
+  .bottom-cta-form-col {
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+  }
+
   .consult-card {
-    border-radius: 18px;
+    border-radius: 14px;
     padding: 28px 26px;
     background: #f2f6fb;
   }
