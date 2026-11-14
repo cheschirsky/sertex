@@ -3597,9 +3597,9 @@ button.review-more {
     display: grid;
     width: min(1340px, calc(100% - 48px));
     max-width: 1340px;
-    grid-template-columns: minmax(0, 1fr) 454px;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.85fr);
     align-items: stretch;
-    gap: 80px;
+    gap: 24px;
     border-radius: 0;
     padding: 0;
     background: transparent;
@@ -7071,9 +7071,9 @@ body.header-fixed {
 @media (min-width: 901px) {
   .bottom-cta-box {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) 454px;
     align-items: stretch;
-    gap: 24px;
+    gap: 80px;
     border-radius: 18px;
     padding: 34px 38px;
     background: var(--white);
