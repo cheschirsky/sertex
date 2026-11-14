@@ -5471,8 +5471,7 @@ button.review-more {
   transition: opacity 160ms ease;
 }
 
-.mega-sub-link::after,
-.mega-industries-list a::after {
+.mega-sub-link::after {
   position: absolute;
   top: 50%;
   right: 0;
@@ -5490,8 +5489,7 @@ button.review-more {
   color: var(--blue);
 }
 
-.mega-sub-link:hover::after,
-.mega-industries-list a:hover::after {
+.mega-sub-link:hover::after {
   opacity: 1;
   transform: translate(0, -50%);
 }
