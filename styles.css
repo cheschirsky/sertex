@@ -3808,43 +3808,38 @@ button.review-more {
 @media (max-width: 640px) {
   body {
     font-size: 16px;
-  }
-
-  .container {
-    width: calc(100% - 28px);
-  }
+  }.container {
+  width: calc(100% - 32px);
+}
 
   .topbar .search-button {
     width: auto;
     max-width: none;
     flex: 1 1 auto;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 42px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-copy > p {
-    font-size: 17px;
-  }
-
-  .hero-collage {
-    min-height: 210px;
-  }
-
-  .hero-image {
-    max-height: 220px;
-  }
-
-  .benefits {
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
+  }.hero {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 32px 0 44px;
+  row-gap: 0;
+}.hero h1 {
+  margin-bottom: 16px;
+  font-size: 32px;
+  line-height: 1.15;
+}.hero-copy > p {
+  margin-bottom: 24px;
+  font-size: 15.5px;
+  line-height: 1.45;
+}.hero-collage {
+  justify-content: center;
+  min-height: auto;
+}.hero-image {
+  max-width: 100%;
+  max-height: 300px;
+}.benefits {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 8px;
+}
 
   .section-heading {
     margin-bottom: 38px;
@@ -3866,13 +3861,11 @@ button.review-more {
 
   .service-list {
     grid-template-columns: 1fr;
-  }
-
-  .service-item b {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
+  }.service-item b {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+}
 
   .industry-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3903,15 +3896,15 @@ button.review-more {
 
   .about-map {
     min-height: 160px;
-  }
-
-  .about-media {
-    height: 210px;
-  }
-
-  .about-section .stats {
-    padding-left: 0;
-  }
+  }.about-media {
+  height: 210px;
+  border-radius: 14px;
+}.about-section .stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 0;
+}
 
   .about-section .partner-labs-inner {
     grid-column: 1;
@@ -3928,45 +3921,55 @@ button.review-more {
 
   .process-section > .container {
     gap: 26px;
-  }
-
-  .process-steps li {
-    padding-right: 0;
-  }
-
-  .process-step-card {
-    min-height: 140px;
-    height: auto;
-    padding: 11px 12px;
-  }
-
-  .process-step-card h3 {
-    font-size: 18px;
-  }
-
-  .process-step-card p {
-    font-size: 15px;
-  }
-
-  .review-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .experts-section .section-heading {
-    align-items: flex-start;
-  }
-
-  .experts-subtitle {
-    font-size: 12px;
-  }
+  }.process-steps li {
+  padding-right: 0;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+}.process-step-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  align-items: start;
+  gap: 10px 12px;
+  height: auto;
+  min-height: auto;
+  padding: 18px 18px 20px;
+}.process-step-card h3 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.25;
+}.process-step-card p {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-size: 14px;
+  line-height: 1.42;
+}.review-grid {
+  grid-template-columns: 1fr;
+  margin-right: -16px;
+  padding-right: 16px;
+  gap: 14px;
+}.experts-section .section-heading {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  margin-bottom: 24px;
+}.experts-subtitle {
+  font-size: 14.5px;
+  margin-top: 12px;
+}
 
   .expert-card > img {
     height: 340px;
-  }
-
-  .article-grid {
-    grid-template-columns: 1fr;
-  }
+  }.article-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-right: -16px;
+  padding-right: 16px;
+  scrollbar-width: none;
+}
 
   .news-list {
     grid-template-columns: 1fr;
@@ -3994,30 +3997,28 @@ button.review-more {
   .bottom-form > input:nth-of-type(3),
   .bottom-form .button {
     grid-column: 1;
-  }
-
-  .review-platforms {
-    gap: 16px;
-  }
+  }.review-platforms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+}
 
   .review-platforms > div:nth-child(odd)::before {
     display: none;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 18px;
-  }
+  }.footer-grid {
+  display: block;
+}
 
   .footer-contacts {
     grid-column: 1 / -1;
-  }
-
-  .footer-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
+  }.footer-bottom {
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 14px;
+}
 
   .footer-bottom > div {
     flex-direction: column;
@@ -4310,11 +4311,9 @@ button.review-more {
   display: none;
 }
 
-@media (max-width: 820px) {
-  /* --- Полоса консультации (синяя) --- */
-  .consultation-band {
-    padding-block: 52px 56px;
-  }
+@media (max-width: 820px) {.consultation-band {
+  padding: 52px 0 112px;
+}
 
   .inline-form {
     grid-template-columns: 1fr;
@@ -4330,24 +4329,21 @@ button.review-more {
   .inline-form .consent {
     grid-column: 1;
     margin-top: 4px;
-  }
-
-  .about-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px;
-  }
+  }.about-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 28px;
+}
 
   .about-intro {
     max-width: 100%;
-  }
-
-  .about-map {
-    position: static;
-    width: 100%;
-    margin-block: -8px;
-  }
+  }.about-map {
+  position: static;
+  width: 100%;
+  min-height: 0;
+  margin-block: 0;
+}
 
   .about-media {
     width: 100%;
@@ -4632,51 +4628,12 @@ button.review-more {
    МОБИЛЬНАЯ ВЕРСИЯ (<= 640px, включая 360px)
    ========================================================================== */
 @media (max-width: 640px) {
-  .container {
-    width: calc(100% - 32px);
-  }
-
-  /* --- Hero (1-й экран) --- */
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-block: 32px 44px;
-  }
-
-  .hero h1 {
-    margin-bottom: 16px;
-    font-size: 32px;
-    line-height: 1.15;
-  }
-
-  .hero-copy > p {
-    margin-bottom: 24px;
-    font-size: 15.5px;
-    line-height: 1.45;
-  }
 
   .hero-copy .button-large {
     width: 100%;
     min-height: 52px;
     padding: 14px 20px;
     font-size: 15.5px;
-  }
-
-  .hero-collage {
-    justify-content: center;
-    min-height: auto;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    max-height: 300px;
-  }
-
-  /* Преимущества: 1 колонка */
-  .benefits {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 8px;
   }
 
   .benefits h3 {
@@ -4715,12 +4672,6 @@ button.review-more {
     font-size: 16px;
   }
 
-  .service-item b {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
-  }
-
   .services-bottom-action {
     justify-content: center;
     margin-top: 24px;
@@ -4755,12 +4706,6 @@ button.review-more {
     font-size: 15px;
   }
 
-  /* --- О компании (СЕРТЕКС) --- */
-  .about-section {
-    border-radius: 0 0 28px 28px;
-    padding-block: 44px 44px;
-  }
-
   .about-intro h2 {
     font-size: 28px;
   }
@@ -4770,38 +4715,21 @@ button.review-more {
     margin-bottom: 24px;
   }
 
-  .about-media {
-    height: 210px;
-    border-radius: 14px;
-  }
-
   .about-play {
     width: 54px;
     height: 54px;
     font-size: 16px;
-  }
-
-  /* Статистика: 3 колонки в один ряд */
-  .about-section .stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .about-section .stats strong {
-    font-size: 28px;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-  }
-
-  .about-section .stats strong::after {
-    width: 32px;
-    height: 2px;
-  }
-
-  .about-section .stats span {
-    font-size: 12px;
-    line-height: 1.3;
-  }
+  }.about-section .stats strong {
+  font-size: 40px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}.about-section .stats strong::after {
+  width: 40px;
+  height: 3px;
+}.about-section .stats span {
+  font-size: 13.5px;
+  line-height: 1.4;
+}
 
   .about-section .partner-lab-card {
     grid-template-columns: 56px minmax(0, 1fr);
@@ -4828,36 +4756,13 @@ button.review-more {
     font-size: 30px;
   }
 
-  .process-steps li {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 10px;
-  }
-
   .process-number {
     padding-top: 18px;
     font-size: 14px;
   }
 
-  /* Карточка шага: иконка справа вверху напротив заголовка, описание под ними на всю ширину */
-  .process-step-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 40px;
-    align-items: start;
-    gap: 10px 12px;
-    min-height: auto;
-    padding: 18px 18px 20px;
-  }
-
   .process-step-card > div {
     display: contents;
-  }
-
-  .process-step-card h3 {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-    font-size: 17px;
-    line-height: 1.25;
   }
 
   .process-step-card .process-icon {
@@ -4866,13 +4771,6 @@ button.review-more {
     width: 38px;
     height: 38px;
     justify-self: end;
-  }
-
-  .process-step-card p {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    font-size: 14px;
-    line-height: 1.42;
   }
 
   .process-contact {
@@ -4897,20 +4795,8 @@ button.review-more {
     padding-block: 48px 52px;
   }
 
-  .experts-section .section-heading {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 18px;
-    margin-bottom: 24px;
-  }
-
   .experts-section .section-heading h2 {
     font-size: 30px;
-  }
-
-  .experts-subtitle {
-    font-size: 14.5px;
-    margin-top: 12px;
   }
 
   .experts-section .slider-buttons {
@@ -4940,12 +4826,6 @@ button.review-more {
 
   .reviews-section .section-heading h2 {
     font-size: 30px;
-  }
-
-  .review-grid {
-    margin-right: -16px;
-    padding-right: 16px;
-    gap: 14px;
   }
 
   .reviews-section .review-card {
@@ -4982,14 +4862,6 @@ button.review-more {
 
   .reviews-bottom-action .button {
     min-width: 180px;
-  }
-
-  /* Рейтинги площадок: 2 колонки, в каждой число со звездой сверху, логотип снизу */
-  .review-platforms {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 16px;
-    margin-top: 32px;
-    padding-top: 24px;
   }
 
   .review-platforms > div {
@@ -5053,16 +4925,6 @@ button.review-more {
     font-size: 17px;
   }
 
-/* ==========================================================================
-   ФИНАЛЬНЫЕ ПРАВКИ ДЛЯ 360px (<= 640px)
-   ========================================================================== */
-  /* --- О компании: статистика в 1 столбец друг под другом --- */
-  .about-section .stats {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
   .about-section .stats div {
     border-bottom: 1px solid rgb(255 255 255 / 12%);
     padding-bottom: 18px;
@@ -5071,22 +4933,6 @@ button.review-more {
   .about-section .stats div:last-child {
     border-bottom: 0;
     padding-bottom: 0;
-  }
-
-  .about-section .stats strong {
-    font-size: 40px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-
-  .about-section .stats strong::after {
-    width: 40px;
-    height: 3px;
-  }
-
-  .about-section .stats span {
-    font-size: 13.5px;
-    line-height: 1.4;
   }
 
   /* --- Материалы и новости: горизонтальный скролл статей (1 целая + 2-я справа) --- */
@@ -5111,16 +4957,6 @@ button.review-more {
   .articles-main {
     width: 100%;
     gap: 24px;
-  }
-
-  .article-grid {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin-right: -16px;
-    padding-right: 16px;
-    scrollbar-width: none;
   }
 
   .article-grid::-webkit-scrollbar {
@@ -5195,21 +5031,12 @@ button.review-more {
     padding-block: 36px 36px;
   }
 
-  .footer-grid {
-    display: block;
-  }
-
   .footer-grid > div:not(.footer-contacts) {
     display: none;
   }
 
   .footer-phone {
     font-size: 24px !important;
-  }
-
-  .footer-bottom {
-    margin-top: 32px;
-    gap: 14px;
   }
 
   .footer-legal {
@@ -5248,19 +5075,20 @@ button.review-more {
   min-width: 0;
   padding: 22px 34px 22px 38px;
   background: #f2f4f7;
-}
-
-.mega-sub-link,
-.mega-industries-list a {
-  padding-left: 0;
+}.mega-sub-link, .mega-industries-list a {
+  padding-left: 16px;
   padding-right: 22px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-}
-
-.mega-sub-link::before,
-.mega-industries-list a::before {
-  content: none;
+}.mega-sub-link::before, .mega-industries-list a::before {
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: url("assets/icons/arrow-double-down-blue.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 160ms ease;
 }
 
 .mega-sub-link::after,
@@ -5308,26 +5136,6 @@ button.review-more {
   #mega-services .mega-services-sub { padding: 18px 16px; }
 }
 
-/* Мега-меню: аккуратная стрелка появляется слева только при наведении. */
-.mega-sub-link,
-.mega-industries-list a {
-  padding-left: 16px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.mega-sub-link::before,
-.mega-industries-list a::before {
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background: url("assets/icons/arrow-double-down-blue.svg") center / contain no-repeat;
-  content: "";
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: opacity 160ms ease;
-}
-
 .mega-sub-link:hover::before,
 .mega-industries-list a:hover::before {
   opacity: 1;
@@ -5346,12 +5154,6 @@ button.review-more {
 
 @media (max-width: 820px) {
 
-  .about-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-
   .about-intro,
   .about-map,
   .about-media,
@@ -5361,11 +5163,6 @@ button.review-more {
     max-width: 100%;
     grid-column: auto;
     grid-row: auto;
-  }
-
-  .about-map {
-    min-height: 0;
-    margin-block: 0;
   }
 }
 
@@ -5433,10 +5230,9 @@ button.review-more {
 
 
 /* Макет: вертикальное выравнивание мега-меню и перекрытия секций. */
-@media (min-width: 821px) {
-  #mega-services .mega-services-sub {
-    padding-top: 18px;
-  }
+@media (min-width: 821px) {#mega-services .mega-services-sub {
+  padding-top: 28px;
+}
 
   #mega-services .mega-sub-pane {
     padding-top: 0;
@@ -5481,10 +5277,7 @@ button.review-more {
 /* Адаптивная геометрия секций после настройки перекрытий на десктопе.
    Сохраняем тот же принцип: величина отрицательного отступа компенсируется
    внутренним отступом следующей секции, чтобы контент не налезал друг на друга. */
-@media (max-width: 820px) {
-  .consultation-band {
-    padding-bottom: 112px;
-  }.about-section {
+@media (max-width: 820px) {.about-section {
   margin-top: -56px;
   margin-bottom: -56px;
   border-radius: 28px;
@@ -5608,10 +5401,6 @@ button.review-more {
 @media (min-width: 821px) {
   #mega-services .mega-services-cats a {
     font-size: 18px;
-  }
-
-  #mega-services .mega-services-sub {
-    padding-top: 28px;
   }
 
   #mega-services .mega-services-sub .mega-sub-link {
@@ -5742,11 +5531,20 @@ body.header-fixed {
 @media (max-width: 640px) {
   body.header-fixed {
     padding-top: var(--fixed-header-offset, 0px);
-  }
-
-  .site-header.is-fixed {
-    padding-bottom: 0;
-  }
+  }.site-header.is-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 85;
+  width: 100%;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgb(7 40 73 / 8%);
+  animation: slideDownNav 180ms ease;
+}
 }
 
 /* Фиксированная полоса всегда от края до края окна.
@@ -6211,19 +6009,6 @@ body.header-fixed {
     display: none;
   }
 
-  .site-header.is-fixed {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 85;
-    width: 100%;
-    border-bottom: 1px solid var(--line);
-    background: var(--white);
-    box-shadow: 0 8px 24px rgb(7 40 73 / 8%);
-    animation: slideDownNav 180ms ease;
-  }
-
   .site-header.is-fixed .main-nav {
     display: none !important;
   }
@@ -6329,10 +6114,6 @@ body.header-fixed {
 }
 
 @media (max-width: 640px) {
-  .hero {
-    padding-top: 32px;
-    row-gap: 0;
-  }
 
   .hero .benefits {
     margin-top: 28px;
