@@ -452,11 +452,29 @@ $(function () {
   });
 
   
-  const $header = $(".site-header");
+    const $header = $(".site-header");
+  const $topbar = $header.find(".topbar");
+  const $mainNav = $header.find(".main-nav");
+
   function handleFixedHeader() {
-    // Фиксированная навигация появляется с первого пикселя прокрутки.
-    const isFixed = $(window).scrollTop() > 0;
-    $header.toggleClass("is-fixed", isFixed);
+    const scrollTop = $(window).scrollTop();
+    const isMobile = window.innerWidth <= 640;
+    const triggerOffset = isMobile ? 20 : ($topbar.outerHeight() || 80);
+    const shouldFix = scrollTop > triggerOffset;
+
+    if (shouldFix) {
+      const fixedHeight = isMobile
+        ? ($topbar.outerHeight() || 70)
+        : ($mainNav.outerHeight() || 74);
+
+      document.documentElement.style.setProperty("--fixed-header-offset", fixedHeight + "px");
+      $header.addClass("is-fixed");
+      $body.addClass("header-fixed");
+    } else {
+      document.documentElement.style.setProperty("--fixed-header-offset", "0px");
+      $header.removeClass("is-fixed");
+      $body.removeClass("header-fixed");
+    }
   }
 
   $(window).on("scroll resize", handleFixedHeader);
@@ -464,8 +482,44 @@ $(function () {
 
   // Открытие полноэкранного меню по клику на любую кнопку .mobile-menu-button (включая фиксированную)
   $(document).off("click", ".mobile-menu-button").on("click", ".mobile-menu-button", function () {
-    setDrawerOpen(!$("#mobile-drawer").hasClass("open"));
+    const willOpen = !$("#mobile-drawer").hasClass("open");
+    if (willOpen) {
+      showMega(null);
+    }
+    setDrawerOpen(willOpen);
   });
+
+  // Перехват кликов по «Все услуги» и «Отрасли» в режиме компактной шапки (<= 1100px)
+  $(document).on("click", '.nav-mega-trigger[data-mega="services"] .services-button, .nav-mega-trigger[data-mega="industries"] .nav-pill', function (e) {
+    if (window.innerWidth > 1100) {
+      return; // На десктопе > 1100px работает стандартное мега-меню
+    }
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const targetKey = $(this).closest(".nav-mega-trigger").data("mega"); // "services" или "industries"
+    const $drawer = $("#mobile-drawer");
+
+    // Закрываем десктопное мега-меню, если оно было открыто
+    showMega(null);
+
+    // Открываем мобильный дровер, если он закрыт
+    if (!$drawer.hasClass("open")) {
+      setDrawerOpen(true);
+    }
+
+    // Сразу переключаем экран мобильного меню на нужный уровень (data-level="services" или "industries")
+    const $targetLevel = $('.mobile-level[data-level="' + targetKey + '"]');
+    if ($targetLevel.length) {
+      $(".mobile-level").prop("hidden", true).removeClass("active");
+      $targetLevel.prop("hidden", false).addClass("active");
+    } else {
+      $drawer.find('[data-go="' + targetKey + '"]').first().trigger("click");
+    }
+  });
+
+
 
 
 });

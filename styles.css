@@ -7127,3 +7127,537 @@ body.header-fixed {
     top: 78px;
   }
 }
+
+/* ==========================================================================
+   ИСПРАВЛЕННАЯ ШАПКА (ОБЫЧНАЯ И ФИКСИРОВАННАЯ) ДЛЯ ВСЕХ РАЗРЕШЕНИЙ
+   ========================================================================== */
+
+/* Сброс старых конфликтов кнопки меню */
+.mobile-menu-button .menu-btn-label,
+.mobile-menu-button .menu-btn-close {
+  width: auto;
+  height: auto;
+  background: transparent;
+}
+
+.mobile-menu-button .menu-btn-label {
+  display: inline;
+  white-space: nowrap;
+}
+
+.mobile-menu-button .menu-btn-burger {
+  display: inline-flex;
+  width: 17px;
+  height: 11px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.mobile-menu-button .menu-btn-close {
+  display: none !important;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.mobile-menu-button.open .menu-btn-burger {
+  display: none !important;
+}
+
+.mobile-menu-button.open .menu-btn-close {
+  display: inline !important;
+}
+
+.mobile-phone-btn img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-90deg);
+}
+
+/* Компенсация высоты при фиксации, чтобы страница не прыгала */
+body.header-fixed {
+  padding-top: var(--fixed-header-offset, 0px) !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. ДЕСКТОП (> 1100px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1101px) {
+  .mobile-header-actions,
+  .nav-fixed-burger {
+    display: none !important;
+  }
+
+  .main-nav {
+    display: block !important;
+  }
+
+  .nav-mega-trigger {
+    display: inline-flex !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .nav-fixed-actions {
+    display: none !important;
+  }
+
+  /* Фиксированное состояние на десктопе */
+  .site-header.is-fixed .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 80;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 8px 28px rgb(7 40 73 / 8%);
+    animation: slideDownNav 180ms ease;
+  }
+
+  .site-header.is-fixed .nav-inner {
+    min-height: 74px;
+  }
+
+  .site-header.is-fixed .nav-hide-fixed {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+  }
+
+  .site-header.is-fixed .nav-fixed-phone,
+  .site-header.is-fixed .nav-fixed-cta {
+    display: inline-flex !important;
+  }
+}
+
+/* Убираем второй бургер из .main-nav на всех разрешениях */
+.nav-fixed-burger {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. ПЛАНШЕТ И МАЛЫЙ НОУТБУК (641px – 1100px)
+   Обычная шапка:
+   - Верхняя строка: Логотип, Телефоны, «Оставить заявку», синяя кнопка «Меню»
+   - Нижняя строка (.main-nav): «Все услуги» и «Отрасли» на всю ширину (50/50)
+   Фиксированная шапка:
+   - Фиксируется только .main-nav с двумя кнопками «Все услуги» и «Отрасли»
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) and (min-width: 641px) {
+  .topbar {
+    min-height: 78px;
+    gap: 16px;
+  }
+
+  .header-search-form,
+  .search-button,
+  .header-location,
+  .header-email,
+  .mobile-phone-btn {
+    display: none !important;
+  }
+
+  .header-phones {
+    display: flex !important;
+    margin-left: auto;
+    font-size: 15px;
+  }
+
+  .topbar .header-cta {
+    display: inline-flex !important;
+    min-height: 44px;
+    padding: 10px 22px;
+  }
+
+  .mobile-header-actions {
+    display: flex !important;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex !important;
+    width: auto;
+    height: 44px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 18px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  /* Нижняя строка навигации: строго 2 кнопки 50/50 */
+  .main-nav {
+    display: block !important;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+  }
+
+  .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    min-height: 64px;
+    align-items: center !important;
+    gap: 14px !important;
+    padding-block: 0 !important;
+  }
+
+  .nav-links,
+  .nav-fixed-actions {
+    display: none !important;
+  }
+
+  .nav-mega-trigger {
+    display: flex !important;
+    flex: 1 1 0 !important;
+    height: auto !important;
+  }
+
+  .services-button,
+  .nav-pill {
+    display: inline-flex !important;
+    width: 100% !important;
+    min-height: 44px;
+    justify-content: center !important;
+  }
+
+  .mobile-drawer {
+    top: 78px;
+  }
+
+  /* Фиксированное состояние на 641px – 1100px: только 2 кнопки без второго бургера */
+  .site-header.is-fixed .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 80;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 28px rgb(7 40 73 / 8%);
+    animation: slideDownNav 180ms ease;
+  }
+
+  .site-header.is-fixed .nav-inner {
+    min-height: 68px;
+    gap: 14px !important;
+  }
+
+  /* Когда дровер открыт с фиксированной панели, выводим его сразу под .main-nav */
+  .site-header.is-fixed .mobile-drawer {
+    top: 68px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .mega-panel {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. МОБИЛЬНЫЙ (<= 640px)
+   Обычная шапка:
+   - Верхняя строка: Логотип, иконка телефона, синяя кнопка «Меню»
+   - Нижняя строка (.main-nav): «Все услуги» и «Отрасли» (скрывается на <= 420px)
+   Фиксированная шапка:
+   - Липкая верхняя строка (Логотип, телефон, «Меню»), нижняя скрыта
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .topbar {
+    min-height: 70px;
+    gap: 10px;
+  }
+
+  .topbar .logo {
+    width: auto;
+  }
+
+  .topbar .logo img {
+    width: 118px;
+  }
+
+  .header-search-form,
+  .search-button,
+  .header-location,
+  .header-email,
+  .header-phones,
+  .topbar .header-cta {
+    display: none !important;
+  }
+
+  .mobile-header-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .mobile-phone-btn {
+    display: grid !important;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 0;
+    border-radius: 8px;
+    background: #f2f6fb;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex !important;
+    width: auto;
+    height: 42px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 14px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  /* Нижняя строка с кнопками «Все услуги» и «Отрасли» на широких мобильных (421–640px) */
+  .main-nav {
+    display: block !important;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+  }
+
+  .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    min-height: 58px;
+    align-items: center !important;
+    gap: 10px !important;
+    padding-block: 0 !important;
+  }
+
+  .nav-links,
+  .nav-fixed-actions {
+    display: none !important;
+  }
+
+  .nav-mega-trigger {
+    display: flex !important;
+    flex: 1 1 0 !important;
+    height: auto !important;
+  }
+
+  .services-button,
+  .nav-pill {
+    display: inline-flex !important;
+    width: 100% !important;
+    min-height: 40px;
+    padding: 8px 12px;
+    justify-content: center !important;
+    font-size: 14px;
+  }
+
+  .mobile-drawer {
+    top: 70px;
+  }
+
+  /* Фиксированное состояние на мобильных */
+  .site-header.is-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 85;
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 8px 24px rgb(7 40 73 / 8%);
+    animation: slideDownNav 180ms ease;
+  }
+
+  .site-header.is-fixed .main-nav {
+    display: none !important;
+  }
+
+  .site-header.is-fixed .mobile-drawer {
+    top: 70px;
+  }
+}
+
+/* Самый узкий мобильный (<= 420px, макет 360px): убираем второй ряд даже в обычной шапке */
+@media (max-width: 420px) {
+  .main-nav {
+    display: none !important;
+  }
+}
+
+/* Жёсткое скрытие второго бургера в .main-nav на всех разрешениях */
+.site-header .main-nav .nav-fixed-burger,
+.site-header.is-fixed .main-nav .nav-fixed-burger,
+.mobile-menu-button.nav-fixed-burger {
+  display: none !important;
+}
+
+/* ==========================================================================
+   ПРИНУДИТЕЛЬНЫЙ ПОКАЗ 2 КНОПОК («ВСЕ УСЛУГИ» И «ОТРАСЛИ») НА 641px – 1100px
+   ========================================================================== */
+@media (max-width: 1100px) and (min-width: 641px) {
+  .site-header .main-nav,
+  .site-header.is-fixed .main-nav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .site-header .main-nav .nav-inner,
+  .site-header.is-fixed .main-nav .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+  }
+
+  .site-header .main-nav .nav-mega-trigger,
+  .site-header.is-fixed .main-nav .nav-mega-trigger {
+    display: flex !important;
+    flex: 1 1 50% !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .site-header .main-nav .nav-mega-trigger .services-button,
+  .site-header .main-nav .nav-mega-trigger .nav-pill,
+  .site-header.is-fixed .main-nav .nav-mega-trigger .services-button,
+  .site-header.is-fixed .main-nav .nav-mega-trigger .nav-pill {
+    display: inline-flex !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Скрываем всё лишнее во втором ряду */
+  .site-header .main-nav .nav-links,
+  .site-header.is-fixed .main-nav .nav-links,
+  .site-header .main-nav .nav-fixed-actions,
+  .site-header.is-fixed .main-nav .nav-fixed-actions,
+  .site-header .main-nav .nav-fixed-burger,
+  .site-header.is-fixed .main-nav .nav-fixed-burger {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   ПОКАЗ ВЫПАДАЮЩЕГО МЕНЮ (.mobile-drawer) НА РАЗРЕШЕНИЯХ ДО 1100px ВКЛЮЧИТЕЛЬНО
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .mobile-drawer {
+    position: fixed;
+    top: 78px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 95;
+    width: 100%;
+    overflow-y: auto;
+    background: var(--blue);
+    color: var(--white);
+  }
+
+  .mobile-drawer.open {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Если шапка зафиксирована (скролл), подстраиваем верхний отступ дровера */
+  .site-header.is-fixed .mobile-drawer {
+    top: 68px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-drawer,
+  .site-header.is-fixed .mobile-drawer {
+    top: 70px;
+  }
+}
+
+@media (min-width: 1101px) {
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   ПЕРЕОПРЕДЕЛЕНИЕ СТАРЫХ ПРАВИЛ ДЛЯ .mobile-drawer НА ШИРИНЕ ДО 1100px
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .mobile-drawer {
+    position: fixed !important;
+    top: 78px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 95 !important;
+    display: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    transform: none !important;
+  }
+
+  .mobile-drawer.open {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Отступ сверху, когда шапка зафиксирована при скролле */
+  .site-header.is-fixed .mobile-drawer {
+    top: 68px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-drawer,
+  .site-header.is-fixed .mobile-drawer {
+    top: 70px !important;
+  }
+}
+
+@media (min-width: 1101px) {
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+
+
