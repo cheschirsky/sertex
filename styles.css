@@ -5570,14 +5570,14 @@ button.review-more {
 @media (min-width: 821px) {
 
   #mega-services .mega-services-grid {
-    grid-template-columns: minmax(280px, 32%) minmax(0, 1fr);
-    gap: 0;
+    grid-template-columns: 422px minmax(0, 1fr);
+    gap: 40px;
     align-items: stretch;
   }
 
   #mega-services .mega-services-cats {
     min-height: 100%;
-    border-radius: 32px 0 0 32px;
+    border-radius: 32px;
     padding: 32px 16px 40px;
     background: #fff;
   }
