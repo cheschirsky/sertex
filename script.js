@@ -560,8 +560,12 @@ $(function () {
     }
 
     const fixedHeight = isMobile
-      ? ($topbar.outerHeight() || 70)
-      : ($mainNav.outerHeight() || 68);
+      ? 70
+      : window.innerWidth <= 900
+        ? 68
+        : window.innerWidth <= 1100
+          ? 78
+          : 74;
 
     document.documentElement.style.setProperty(
       "--fixed-header-offset",
