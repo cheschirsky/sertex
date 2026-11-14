@@ -698,10 +698,6 @@ textarea:focus-visible {
   padding-right: 48px;
 }
 
-.mega-sub-pane.active {
-  display: grid;
-}
-
 .mega-sub-link {
   position: relative;
   display: block;
@@ -1311,10 +1307,6 @@ textarea:focus-visible {
   font-weight: 400;
   line-height: 1.12;
   letter-spacing: -0.02em;
-}
-
-.about-intro h2 span {
-  color: #3479df;
 }
 
 .about-intro > p:not(.eyebrow) {
@@ -2847,22 +2839,6 @@ textarea:focus-visible {
   background: #ffffff;
   color: #082b4d;
   font-size: 15px;
-}
-
-.socials a.social-vk {
-  background: #2787f5;
-}
-
-.socials a.social-wa {
-  background: #25d366;
-}
-
-.socials a.social-max {
-  background: linear-gradient(135deg, #6d5dfc, #38bdf8);
-}
-
-.socials a.social-tg {
-  background: #2aabee;
 }
 
 /* Нижняя полоса: копирайт слева, юридические ссылки справа */
@@ -5785,18 +5761,6 @@ button.review-more {
   color: #fff;
 }
 
-.about-intro h2 {
-  color: #fff;
-}
-
-.about-intro > p:not(.eyebrow) {
-  color: rgb(255 255 255 / 74%);
-}
-
-.about-section .stats div {
-  border-color: rgb(255 255 255 / 16%);
-}
-
 .about-section .stats strong {
   color: #fff;
 }
@@ -5807,10 +5771,6 @@ button.review-more {
 
 .about-section .partner-labs-inner h3 {
   color: #fff;
-}
-
-.about-section .partner-lab-card {
-  background: rgb(255 255 255 / 10%);
 }
 
 .about-section .partner-lab-card > span {
@@ -6025,31 +5985,9 @@ button.review-more {
 
 /* Мобильная версия сохраняет перекрытия, но использует меньший шаг. */
 @media (max-width: 820px) {
-  .consultation-band {
-    padding-bottom: 112px;
-  }
-
-  .about-section {
-    margin-top: -56px;
-    margin-bottom: -56px;
-    border-radius: 28px;
-    padding-top: 64px;
-    padding-bottom: 56px;
-  }
-
-  .process-section {
-    padding-top: 56px;
-  }
 
   .articles-section {
     padding-bottom: 112px;
-  }
-
-  .bottom-cta {
-    margin-top: -56px;
-    margin-bottom: -56px;
-    border-radius: 28px;
-    padding: 64px 0;
   }
 
   .site-footer {
@@ -6058,9 +5996,6 @@ button.review-more {
 }
 
 @media (max-width: 650px) {
-  .consultation-band {
-    padding-bottom: 88px;
-  }
 
   .about-section {
     margin-top: -44px;
@@ -6069,19 +6004,8 @@ button.review-more {
     padding-bottom: 44px;
   }
 
-  .process-section {
-    padding-top: 44px;
-  }
-
   .articles-section {
     padding-bottom: 88px;
-  }
-
-  .bottom-cta {
-    margin-top: -44px;
-    margin-bottom: -44px;
-    border-radius: 22px;
-    padding: 44px 0;
   }
 
   .bottom-cta h2 {
@@ -6770,10 +6694,6 @@ body.header-fixed {
     padding: 0 16px;
     border-radius: 10px;
     font-size: 15px;
-  }
-
-  .site-header.is-fixed .mobile-drawer {
-    top: 68px;
   }
 }
 
