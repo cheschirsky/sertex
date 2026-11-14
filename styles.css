@@ -6356,6 +6356,25 @@ button.review-more {
   z-index: 85;
 }
 
+/* Кнопка меню всегда сохраняет ширину по содержимому. */
+.mobile-menu-button,
+.site-header .mobile-menu-button {
+  box-sizing: border-box;
+  width: max-content;
+  min-width: max-content;
+  max-width: none;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  padding-inline: 16px;
+  white-space: nowrap;
+}
+
+.mobile-menu-button .menu-btn-label,
+.mobile-menu-button .menu-btn-burger,
+.mobile-menu-button .menu-btn-close {
+  flex: 0 0 auto;
+}
+
 /* Общий вид кнопки «Меню» и её иконки. */
 .mobile-menu-button {
   display: none;
@@ -6448,6 +6467,19 @@ body.header-fixed {
 
   .site-header.is-fixed {
     padding-bottom: 0;
+  }
+}
+
+/* Фиксированная полоса всегда от края до края окна.
+   Внутренний .container ограничивает только содержимое, не фон навигации. */
+@media (min-width: 641px) {
+  .site-header.is-fixed .main-nav {
+    box-sizing: border-box;
+    position: fixed;
+    inset-inline: 0;
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
   }
 }
 
@@ -6555,6 +6587,9 @@ body.header-fixed {
 
   .mobile-header-actions .mobile-menu-button {
     display: inline-flex;
+    width: max-content;
+    min-width: max-content;
+    flex: 0 0 auto;
     height: 44px;
     padding: 0 18px;
     border-radius: 10px;
@@ -6646,7 +6681,9 @@ body.header-fixed {
 
   .site-header.is-fixed .nav-fixed-burger {
     display: inline-flex;
-    width: auto;
+    width: max-content;
+    min-width: max-content;
+    flex: 0 0 auto;
     height: 44px;
     padding: 0 16px;
     border-radius: 10px;
@@ -6830,6 +6867,9 @@ body.header-fixed {
 
   .mobile-header-actions .mobile-menu-button {
     display: inline-flex;
+    width: max-content;
+    min-width: max-content;
+    flex: 0 0 auto;
     height: 42px;
     padding: 0 14px;
     border-radius: 8px;
