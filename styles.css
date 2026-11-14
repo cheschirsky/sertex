@@ -5577,7 +5577,7 @@ button.review-more {
 
   #mega-services .mega-services-cats {
     min-height: 100%;
-    border-radius: 32px;
+    border-radius: 32px 0 0 32px;
     padding: 32px 16px 40px;
     background: #fff;
   }
