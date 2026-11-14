@@ -779,7 +779,7 @@ textarea:focus-visible {
 }
 
 .hero h1 {
-  max-width: 720px;
+  max-width: 753px;
   margin-bottom: 22px;
   color: var(--navy);
   font-size: clamp(36px, 3.8vw, 52px);
