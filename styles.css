@@ -5457,7 +5457,8 @@ button.review-more {
   transition: opacity 160ms ease;
 }
 
-.mega-sub-link::before {
+.mega-sub-link::before,
+.mega-industries-list a::before {
   position: absolute;
   top: 50%;
   left: 0;
