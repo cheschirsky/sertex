@@ -5439,25 +5439,6 @@ button.review-more {
   display: none !important;
 }
 
-#mega-services .mega-services-grid {
-  grid-template-columns: minmax(280px, 32%) minmax(0, 1fr);
-  gap: 0;
-  align-items: stretch;
-}
-
-#mega-services .mega-services-cats {
-  min-height: 100%;
-  border-radius: 32px 0 0 32px;
-  padding: 32px 16px 40px;
-  background: #fff;
-}
-
-#mega-services .mega-services-sub {
-  min-width: 0;
-  padding: 22px 34px 22px 38px;
-  background: #f2f4f7;
-}
-
 .mega-sub-link, .mega-industries-list a {
   padding-left: 16px;
   padding-right: 22px;
@@ -5587,6 +5568,25 @@ button.review-more {
 
 /* Макет: вертикальное выравнивание мега-меню и перекрытия секций. */
 @media (min-width: 821px) {
+
+  #mega-services .mega-services-grid {
+    grid-template-columns: minmax(280px, 32%) minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+  }
+
+  #mega-services .mega-services-cats {
+    min-height: 100%;
+    border-radius: 32px 0 0 32px;
+    padding: 32px 16px 40px;
+    background: #fff;
+  }
+
+  #mega-services .mega-services-sub {
+    min-width: 0;
+    padding: 22px 34px 22px 38px;
+    background: #f2f4f7;
+  }
 
   .expert-photo {
     width: 262px;
