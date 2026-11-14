@@ -749,14 +749,6 @@ textarea:focus-visible {
   transition: color 160ms ease;
 }
 
-.mega-industries-list a::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--blue);
-  content: "»";
-}
-
 .mega-industries-list a:hover {
   color: var(--blue);
 }
@@ -5444,17 +5436,6 @@ button.review-more {
   padding-right: 22px;
   font-size: 16px;
   font-weight: 400;
-}
-
-.mega-sub-link::before, .mega-industries-list a::before {
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background: url("assets/icons/arrow-double-down-blue.svg") center / contain no-repeat;
-  content: "";
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: opacity 160ms ease;
 }
 
 .mega-sub-link::before,
