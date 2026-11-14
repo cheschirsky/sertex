@@ -6809,9 +6809,33 @@ body.header-fixed {
     justify-content: center;
   }
 
-  .site-header.is-fixed .nav-links,
-  .site-header.is-fixed .nav-fixed-actions {
+  .site-header.is-fixed .nav-links {
     display: none;
+  }
+
+  /* В фиксированной планшетной навигации оставляем две кнопки
+     слева и синий бургер справа. */
+  .site-header.is-fixed .nav-fixed-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .site-header.is-fixed .nav-fixed-phone,
+  .site-header.is-fixed .nav-fixed-cta {
+    display: none;
+  }
+
+  .site-header.is-fixed .nav-fixed-burger {
+    display: inline-flex;
+    width: max-content;
+    min-width: max-content;
+    flex: 0 0 auto;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 10px;
+    font-size: 15px;
   }
 
   .site-header.is-fixed .mobile-drawer {
