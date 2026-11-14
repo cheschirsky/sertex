@@ -4642,6 +4642,7 @@ button.review-more {
 
   .site-header.is-fixed .main-nav {
     position: fixed;
+    display: block !important;
     top: 0;
     right: 0;
     left: 0;
@@ -6735,7 +6736,7 @@ body.drawer-open {
 /* Фиксированная навигация на широком десктопе. */
 @media (min-width: 1101px) {
   .main-nav {
-    display: block;
+    display: block !important;
   }
 
   .nav-mega-trigger {
@@ -6843,7 +6844,7 @@ body.drawer-open {
   }
 
   .main-nav {
-    display: block;
+    display: block !important;
   }
 
   .nav-inner {
@@ -7118,7 +7119,7 @@ body.drawer-open {
   }
 
   .main-nav {
-    display: block;
+    display: block !important;
   }
 
   .nav-inner {
