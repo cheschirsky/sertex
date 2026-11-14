@@ -5380,6 +5380,16 @@ button.review-more {
 /* Макет: вертикальное выравнивание мега-меню и перекрытия секций. */
 @media (min-width: 821px) {
 
+  .expert-photo {
+    width: 262px;
+    max-width: 100%;
+    height: 262px;
+    flex: 0 0 262px;
+    align-self: center;
+    aspect-ratio: 1;
+  }
+
+
   #mega-services .mega-services-sub {
   padding-top: 28px;
 }
@@ -5404,17 +5414,6 @@ button.review-more {
 
 #mega-services .mega-services-sub .mega-sub-link {
     font-size: 16px;
-  }
-
-}p: 20px;
-  }
-
-#mega-industries .mega-industries-list {
-    row-gap: 20px;
-  }
-
-#mega-industries .mega-industries-list a {
-    padding-block: 0;
   }
 
 }
@@ -6020,6 +6019,11 @@ body.header-fixed {
   }
 
 
+  .site-header.is-fixed .mobile-drawer {
+    top: 68px;
+  }
+
+
   .hero {
     padding-top: 48px;
     row-gap: 0;
@@ -6027,12 +6031,6 @@ body.header-fixed {
 
 .hero .benefits {
     margin-top: 32px;
-  }
-
-}
-
-  .site-header.is-fixed .mobile-drawer {
-    top: 68px;
   }
 
 }
