@@ -7135,6 +7135,33 @@ body.header-fixed {
   }
 }
 
+
+/* Узкие экраны: сохраняем наезд CTA на предыдущую секцию,
+   но возвращаем нормальный зазор до заголовка и не даём ему сжиматься. */
+@media (max-width: 820px) {
+  .bottom-cta {
+    padding-top: 100px;
+  }
+
+  .bottom-cta-form-col {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .bottom-cta h2 {
+    width: 100%;
+    max-width: none;
+    flex: 0 0 auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 650px) {
+  .bottom-cta {
+    padding-top: 88px;
+  }
+}
+
 @media (max-width: 650px) {
   .bottom-cta-box {
     border-radius: 22px;
