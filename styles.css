@@ -6476,10 +6476,12 @@ body.header-fixed {
   .site-header.is-fixed .main-nav {
     box-sizing: border-box;
     position: fixed;
-    inset-inline: 0;
-    width: auto;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 100vw;
     max-width: none;
-    margin-inline: 0;
+    margin: 0;
   }
 }
 
