@@ -8,6 +8,9 @@
 .experts-page-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .experts-page-grid .expert-card { display: grid !important; grid-template-columns: minmax(120px, 34%) minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 20px; align-items: start; min-height: 0; margin: 0; padding: 18px; }
 .experts-page-grid .expert-photo { grid-column: 1; grid-row: 1 / span 4; height: 100%; min-height: 190px; margin: 0; }
+.experts-page-grid .expert-experience {
+ justify-self: start;
+}
 .experts-page-grid .expert-experience,
 .experts-page-grid h3,
 .experts-page-grid .expert-categories,
