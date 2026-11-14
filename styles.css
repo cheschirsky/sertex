@@ -6733,6 +6733,28 @@ body.drawer-open {
   overflow: hidden;
 }
 
+/* Компенсация исчезающей из потока строки навигации.
+   На телефоне фиксируется вся шапка, поэтому отступ переносится на body. */
+body.header-fixed {
+  padding-top: 0;
+}
+
+@media (min-width: 641px) {
+  .site-header.is-fixed {
+    padding-bottom: var(--fixed-header-offset, 0px);
+  }
+}
+
+@media (max-width: 640px) {
+  body.header-fixed {
+    padding-top: var(--fixed-header-offset, 0px);
+  }
+
+  .site-header.is-fixed {
+    padding-bottom: 0;
+  }
+}
+
 /* Фиксированная навигация на широком десктопе. */
 @media (min-width: 1101px) {
   .main-nav {
@@ -7166,7 +7188,7 @@ body.drawer-open {
   }
 
   .site-header.is-fixed .main-nav {
-    display: none;
+    display: none !important;
   }
 
   .site-header.is-fixed .topbar {
@@ -7184,7 +7206,7 @@ body.drawer-open {
 
 @media (max-width: 420px) {
   .main-nav {
-    display: none;
+    display: none !important;
   }
 }
 
