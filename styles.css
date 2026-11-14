@@ -7136,6 +7136,13 @@ body.header-fixed {
   }
 }
 
+@media (max-width: 1200px) and (min-width: 901px) {
+  .bottom-cta-box {
+    grid-template-columns: minmax(0, 1fr) 370px;
+    gap: 40px;
+  }
+}
+
 /* Планшет и телефон: единая белая карточка внутри синей секции. */
 @media (max-width: 900px) {
   .bottom-cta-box {
